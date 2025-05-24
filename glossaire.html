@@ -5,26 +5,14 @@
     <title>Glossaire Tennis</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body { max-width: 900px; margin: auto; font-family: Arial, sans-serif; background: #fff; color: #111; transition: background 0.4s, color 0.4s; }
-        h1 { text-align: center; margin-top: 1em; }
-        nav.sommaire { text-align: center; margin: 1.5em 0 2em 0; }
-        nav.sommaire a { margin: 0 8px; text-decoration: none; color: #007b43; font-weight: bold; }
-        nav.sommaire a:hover { text-decoration: underline; }
-        .terme { margin-bottom: 22px; }
-        dt { font-weight: bold; color: #006600; font-size: 1.1em; }
-        dd { margin: 0 0 12px 20px; }
-        .retour { display: block; margin: 2em auto 1em auto; text-align: center; }
-        .retour button { padding: 10px 20px; font-size: 1em; border-radius: 6px; border: none; background: #eee; cursor: pointer; border: 1px solid #bbb;}
-        .retour button:hover { background: #ddd; }
-        footer { text-align: center; padding: 1.2em 0 0.7em 0; color: #555; font-size: 0.98em; }
-
-        /* Mode sombre */
-        body.dark-theme { background: #131313; color: #e7e7e7; }
-        body.dark-theme dt { color: #66ff99; }
-        body.dark-theme nav.sommaire a { color: #77ffa3; }
-        body.dark-theme .retour button { background: #222; color: #eee; border: 1px solid #444; }
-        body.dark-theme .retour button:hover { background: #282828; }
-        body.dark-theme footer { color: #aaa; }
+        body { max-width: 1100px; margin: auto; font-family: Arial, sans-serif; background: #fff; color: #111; transition: background 0.4s, color 0.4s; }
+        header, main, footer { width: 100%; }
+        header { margin-bottom: 24px; }
+        nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 1em 0 0 0; }
+        nav ul li { margin: 0; }
+        nav ul a, nav ul button { background: none; color: #007b43; border: none; padding: 8px 14px; cursor: pointer; font-size: 1em; border-radius: 5px; text-decoration: none; }
+        nav ul a.active, nav ul button.active { font-weight: bold; color: #fff; background: #007b43; pointer-events: none;}
+        nav ul a:hover, nav ul button:hover { background: #e3ffe8; }
         .sombre-toggle-btn {
             position: fixed;
             top: 12px;
@@ -38,159 +26,181 @@
             font-size: 1em;
             transition: background 0.2s;
         }
-        body.dark-theme .sombre-toggle-btn {
-            background: #232323;
-            color: #eee;
-            border: 1px solid #666;
-        }
+        body.dark-theme { background: #131313; color: #e7e7e7; }
+        body.dark-theme nav ul a, body.dark-theme nav ul button { color: #66ff99; }
+        body.dark-theme nav ul a.active, body.dark-theme nav ul button.active { background: #174733; color: #fff; }
+        body.dark-theme nav ul a:hover, body.dark-theme nav ul button:hover { background: #174733; }
+        body.dark-theme .sombre-toggle-btn { background: #232323; color: #eee; border: 1px solid #666; }
+        main { margin-top: 40px; }
+        h2 { margin-top: 32px; }
+        dl { margin: 0 0 40px 0; }
+        .terme { margin-bottom: 22px; }
+        dt { font-weight: bold; color: #006600; font-size: 1.1em; }
+        body.dark-theme dt { color: #66ff99; }
+        dd { margin: 0 0 12px 20px; }
+        nav.sommaire { text-align: center; margin: 1.5em 0 2em 0; }
+        nav.sommaire a { margin: 0 8px; text-decoration: none; color: #007b43; font-weight: bold; }
+        nav.sommaire a:hover { text-decoration: underline; }
+        body.dark-theme nav.sommaire a { color: #77ffa3; }
+        .retour { display: block; margin: 2em auto 1em auto; text-align: center; }
+        .retour button { padding: 10px 20px; font-size: 1em; border-radius: 6px; border: none; background: #eee; cursor: pointer; border: 1px solid #bbb;}
+        .retour button:hover { background: #ddd; }
+        body.dark-theme .retour button { background: #222; color: #eee; border: 1px solid #444; }
+        body.dark-theme .retour button:hover { background: #282828; }
+        footer { text-align: center; padding: 1.2em 0 0.7em 0; color: #555; font-size: 0.98em; }
+        body.dark-theme footer { color: #aaa; }
     </style>
 </head>
 <body>
     <button id="theme-btn" class="sombre-toggle-btn" aria-label="Changer le mode d'affichage">🌙 Mode sombre</button>
-    <h1 id="top">Glossaire du Tennis 🎾</h1>
+    <header>
+        <h1>Tennis Passion 🎾</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#presentation">Présentation</a></li>
+                <li><a href="index.html#histoire">Histoire</a></li>
+                <li><a href="index.html#regles">Règles</a></li>
+                <li><a href="index.html#tournois">Tournois majeurs</a></li>
+                <li><a href="index.html#news">Actualités</a></li>
+                <li><a href="index.html#classement">Classement</a></li>
+                <li><a href="index.html#players">Joueurs célèbres</a></li>
+                <li><a href="index.html#gallery">Galerie</a></li>
+                <li><a href="index.html#citation">Citation</a></li>
+                <li><a href="index.html#quiz">Quiz</a></li>
+                <li><button class="active">Glossaire</button></li>
+                <li><a href="index.html#utils">Outils</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <nav class="sommaire">
-        <a href="#A">A</a>
-        <a href="#B">B</a>
-        <a href="#C">C</a>
-        <a href="#D">D</a>
-        <a href="#E">E</a>
-        <a href="#G">G</a>
-        <a href="#J">J</a>
-        <a href="#L">L</a>
-        <a href="#M">M</a>
-        <a href="#R">R</a>
-        <a href="#S">S</a>
-        <a href="#T">T</a>
-        <a href="#V">V</a>
-        <a href="#W">W</a>
-        <a href="#A2">ATP/WTA</a>
-        <a href="#retour-haut">⬆️ Haut</a>
-    </nav>
-
-    <dl>
-        <div class="terme" id="A">
-            <dt>Ace</dt>
-            <dd>Service gagnant que l’adversaire ne touche pas. Le serveur marque un point direct sans échange.</dd>
+    <main>
+        <h2 id="top">Glossaire du Tennis 🎾</h2>
+        <nav class="sommaire">
+            <a href="#A">A</a>
+            <a href="#B">B</a>
+            <a href="#C">C</a>
+            <a href="#D">D</a>
+            <a href="#E">E</a>
+            <a href="#G">G</a>
+            <a href="#J">J</a>
+            <a href="#L">L</a>
+            <a href="#M">M</a>
+            <a href="#R">R</a>
+            <a href="#S">S</a>
+            <a href="#T">T</a>
+            <a href="#V">V</a>
+            <a href="#W">W</a>
+            <a href="#A2">ATP/WTA</a>
+            <a href="#retour-haut">⬆️ Haut</a>
+        </nav>
+        <dl>
+            <div class="terme" id="A">
+                <dt>Ace</dt>
+                <dd>Service gagnant que l’adversaire ne touche pas. Le serveur marque un point direct sans échange.</dd>
+            </div>
+            <div class="terme">
+                <dt>Amorti</dt>
+                <dd>Coup frappé doucement pour que la balle rebondisse juste derrière le filet, surprenant l’adversaire.</dd>
+            </div>
+            <div class="terme">
+                <dt>Avantage</dt>
+                <dd>Après égalité (40-40), le joueur qui gagne le point a l’avantage : s’il marque encore, il remporte le jeu.</dd>
+            </div>
+            <div class="terme" id="B">
+                <dt>Baseline</dt>
+                <dd>Ligne du fond du court, derrière laquelle on sert et d’où l’on joue de nombreux coups.</dd>
+            </div>
+            <div class="terme">
+                <dt>Break</dt>
+                <dd>Jeu remporté sur le service de l’adversaire. Faire un break permet de prendre l’avantage dans un set.</dd>
+            </div>
+            <div class="terme">
+                <dt>Break Point</dt>
+                <dd>Balle de break : opportunité de gagner le jeu sur le service adverse.</dd>
+            </div>
+            <div class="terme" id="C">
+                <dt>Challenger</dt>
+                <dd>Tournoi professionnel de niveau inférieur aux tournois ATP principaux, idéal pour les joueurs en progression.</dd>
+            </div>
+            <div class="terme">
+                <dt>Coup droit</dt>
+                <dd>Coup frappé du côté de la main qui tient la raquette (à droite pour un droitier, à gauche pour un gaucher).</dd>
+            </div>
+            <div class="terme" id="D">
+                <dt>Double faute</dt>
+                <dd>Deux services ratés d’affilée : le serveur perd le point.</dd>
+            </div>
+            <div class="terme" id="E">
+                <dt>Égalité (40-40)</dt>
+                <dd>Les deux joueurs sont à 40 points : il faut deux points consécutifs pour remporter le jeu.</dd>
+            </div>
+            <div class="terme" id="G">
+                <dt>Grand Chelem</dt>
+                <dd>Les 4 plus grands tournois : Open d’Australie, Roland-Garros, Wimbledon, US Open. Remporter les 4 la même année est exceptionnel.</dd>
+            </div>
+            <div class="terme" id="J">
+                <dt>Jeu</dt>
+                <dd>Unité de base du score. Il faut 6 jeux (avec 2 d’écart) pour gagner un set.</dd>
+            </div>
+            <div class="terme" id="L">
+                <dt>Let</dt>
+                <dd>Service à rejouer : la balle touche le filet mais retombe dans le carré de service.</dd>
+            </div>
+            <div class="terme" id="M">
+                <dt>Match</dt>
+                <dd>Rencontre complète entre joueurs ou équipes, composée de sets et de jeux.</dd>
+            </div>
+            <div class="terme" id="R">
+                <dt>Revers</dt>
+                <dd>Coup frappé du côté opposé à la main qui tient la raquette (à gauche pour un droitier, à droite pour un gaucher).</dd>
+            </div>
+            <div class="terme" id="S">
+                <dt>Set</dt>
+                <dd>Il faut remporter 6 jeux (avec 2 d’écart) pour gagner un set. Un match se joue en 2 ou 3 sets gagnants.</dd>
+            </div>
+            <div class="terme">
+                <dt>Slice</dt>
+                <dd>Coup coupé où la balle tourne et ralentit après le rebond. Souvent utilisé pour varier le jeu ou surprendre l’adversaire.</dd>
+            </div>
+            <div class="terme">
+                <dt>Smash</dt>
+                <dd>Coup frappé fort au-dessus de la tête, souvent pour finir le point, surtout sur une balle lobée.</dd>
+            </div>
+            <div class="terme" id="Surface">
+                <dt>Surface</dt>
+                <dd>Type de sol sur lequel se joue le match : terre battue, gazon, dur (béton/résine).</dd>
+            </div>
+            <div class="terme" id="T">
+                <dt>Tie-break</dt>
+                <dd>Jeu décisif joué à 6-6 dans un set. Le premier à 7 points (avec 2 d’écart) gagne le set.</dd>
+            </div>
+            <div class="terme" id="V">
+                <dt>Volée</dt>
+                <dd>Coup frappé avant que la balle ne touche le sol, en général près du filet.</dd>
+            </div>
+            <div class="terme" id="W">
+                <dt>Wild Card</dt>
+                <dd>Invitation offerte à un joueur pour participer à un tournoi sans passer par les qualifications.</dd>
+            </div>
+            <div class="terme" id="A2">
+                <dt>ATP / WTA</dt>
+                <dd>Organismes qui gèrent les circuits professionnels : ATP pour les hommes, WTA pour les femmes.</dd>
+            </div>
+        </dl>
+        <div class="retour" id="retour-haut">
+            <button onclick="window.location.href='index.html';">⬅️ Retour à l'accueil</button>
+            <button onclick="window.scrollTo({top:0,behavior:'smooth'})" style="margin-left: 14px;">⬆️ Haut de page</button>
         </div>
-        <div class="terme">
-            <dt>Amorti</dt>
-            <dd>Coup frappé doucement pour que la balle rebondisse juste derrière le filet, surprenant l’adversaire.</dd>
-        </div>
-        <div class="terme">
-            <dt>Avantage</dt>
-            <dd>Après égalité (40-40), le joueur qui gagne le point a l’avantage : s’il marque encore, il remporte le jeu.</dd>
-        </div>
-
-        <div class="terme" id="B">
-            <dt>Baseline</dt>
-            <dd>Ligne du fond du court, derrière laquelle on sert et d’où l’on joue de nombreux coups.</dd>
-        </div>
-        <div class="terme">
-            <dt>Break</dt>
-            <dd>Jeu remporté sur le service de l’adversaire. Faire un break permet de prendre l’avantage dans un set.</dd>
-        </div>
-        <div class="terme">
-            <dt>Break Point</dt>
-            <dd>Balle de break : opportunité de gagner le jeu sur le service adverse.</dd>
-        </div>
-
-        <div class="terme" id="C">
-            <dt>Challenger</dt>
-            <dd>Tournoi professionnel de niveau inférieur aux tournois ATP principaux, idéal pour les joueurs en progression.</dd>
-        </div>
-        <div class="terme">
-            <dt>Coup droit</dt>
-            <dd>Coup frappé du côté de la main qui tient la raquette (à droite pour un droitier, à gauche pour un gaucher).</dd>
-        </div>
-
-        <div class="terme" id="D">
-            <dt>Double faute</dt>
-            <dd>Deux services ratés d’affilée : le serveur perd le point.</dd>
-        </div>
-
-        <div class="terme" id="E">
-            <dt>Égalité (40-40)</dt>
-            <dd>Les deux joueurs sont à 40 points : il faut deux points consécutifs pour remporter le jeu.</dd>
-        </div>
-
-        <div class="terme" id="G">
-            <dt>Grand Chelem</dt>
-            <dd>Les 4 plus grands tournois : Open d’Australie, Roland-Garros, Wimbledon, US Open. Remporter les 4 la même année est exceptionnel.</dd>
-        </div>
-
-        <div class="terme" id="J">
-            <dt>Jeu</dt>
-            <dd>Unité de base du score. Il faut 6 jeux (avec 2 d’écart) pour gagner un set.</dd>
-        </div>
-
-        <div class="terme" id="L">
-            <dt>Let</dt>
-            <dd>Service à rejouer : la balle touche le filet mais retombe dans le carré de service.</dd>
-        </div>
-
-        <div class="terme" id="M">
-            <dt>Match</dt>
-            <dd>Rencontre complète entre joueurs ou équipes, composée de sets et de jeux.</dd>
-        </div>
-
-        <div class="terme" id="R">
-            <dt>Revers</dt>
-            <dd>Coup frappé du côté opposé à la main qui tient la raquette (à gauche pour un droitier, à droite pour un gaucher).</dd>
-        </div>
-
-        <div class="terme" id="S">
-            <dt>Set</dt>
-            <dd>Il faut remporter 6 jeux (avec 2 d’écart) pour gagner un set. Un match se joue en 2 ou 3 sets gagnants.</dd>
-        </div>
-        <div class="terme">
-            <dt>Slice</dt>
-            <dd>Coup coupé où la balle tourne et ralentit après le rebond. Souvent utilisé pour varier le jeu ou surprendre l’adversaire.</dd>
-        </div>
-        <div class="terme">
-            <dt>Smash</dt>
-            <dd>Coup frappé fort au-dessus de la tête, souvent pour finir le point, surtout sur une balle lobée.</dd>
-        </div>
-        <div class="terme" id="Surface">
-            <dt>Surface</dt>
-            <dd>Type de sol sur lequel se joue le match : terre battue, gazon, dur (béton/résine).</dd>
-        </div>
-
-        <div class="terme" id="T">
-            <dt>Tie-break</dt>
-            <dd>Jeu décisif joué à 6-6 dans un set. Le premier à 7 points (avec 2 d’écart) gagne le set.</dd>
-        </div>
-
-        <div class="terme" id="V">
-            <dt>Volée</dt>
-            <dd>Coup frappé avant que la balle ne touche le sol, en général près du filet.</dd>
-        </div>
-
-        <div class="terme" id="W">
-            <dt>Wild Card</dt>
-            <dd>Invitation offerte à un joueur pour participer à un tournoi sans passer par les qualifications.</dd>
-        </div>
-
-        <div class="terme" id="A2">
-            <dt>ATP / WTA</dt>
-            <dd>Organismes qui gèrent les circuits professionnels : ATP pour les hommes, WTA pour les femmes.</dd>
-        </div>
-    </dl>
-
-    <div class="retour" id="retour-haut">
-        <button onclick="window.location.href='index.html';">⬅️ Retour à l'accueil</button>
-        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" style="margin-left: 14px;">⬆️ Haut de page</button>
-    </div>
-
+    </main>
     <footer>
         &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.02
     </footer>
-
     <script>
         // Mode sombre clair
         const themeBtn = document.getElementById('theme-btn');
         let dark = false;
-        // Si déjà activé dans la session précédente
         if (sessionStorage.getItem('tennis-glossaire-dark') === '1') {
             document.body.classList.add('dark-theme');
             themeBtn.textContent = "☀️ Mode clair";
