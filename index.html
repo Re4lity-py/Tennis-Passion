@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tennis Passion</title>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -12,27 +11,8 @@
         nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 1em 0 0 0; }
         nav ul li { margin: 0; }
         nav ul a, nav ul button { background: none; color: #007b43; border: none; padding: 8px 14px; cursor: pointer; font-size: 1em; border-radius: 5px; text-decoration: none; }
+        nav ul a.active, nav ul button.active { font-weight: bold; color: #fff; background: #007b43; pointer-events: none;}
         nav ul a:hover, nav ul button:hover { background: #e3ffe8; }
-        .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
-        .gallery img { width: 220px; height: 140px; object-fit: cover; border-radius: 7px; border: 1px solid #ccc; }
-        table { border-collapse: collapse; width: 100%; margin: 1em 0; }
-        th, td { border: 1px solid #bbb; padding: 8px 12px; text-align: center; }
-        th { background: #e7ffe7; }
-        section { margin-bottom: 36px; }
-        #topBtn { position: fixed; bottom: 22px; right: 28px; z-index: 99; padding: 10px 18px; background: #007b43; color: #fff; border: none; border-radius: 50%; font-size: 1.3em; display: none; cursor: pointer; }
-        #topBtn:hover { background: #005e33; }
-        footer { text-align: center; padding: 1.2em 0 0.7em 0; color: #555; font-size: 0.98em; }
-
-        /* Mode sombre */
-        body.dark-theme { background: #131313; color: #e7e7e7; }
-        body.dark-theme th, body.dark-theme td { border-color: #444; }
-        body.dark-theme th { background: #233d2b; }
-        body.dark-theme nav ul a, body.dark-theme nav ul button { color: #66ff99; }
-        body.dark-theme nav ul a:hover, body.dark-theme nav ul button:hover { background: #174733; }
-        body.dark-theme .gallery img { border-color: #444; }
-        body.dark-theme #topBtn { background: #232323; color: #77ffa3; }
-        body.dark-theme #topBtn:hover { background: #174733; }
-        body.dark-theme footer { color: #aaa; }
         .sombre-toggle-btn {
             position: fixed;
             top: 12px;
@@ -46,21 +26,26 @@
             font-size: 1em;
             transition: background 0.2s;
         }
-        body.dark-theme .sombre-toggle-btn {
-            background: #232323;
-            color: #eee;
-            border: 1px solid #666;
-        }
+        body.dark-theme { background: #131313; color: #e7e7e7; }
+        body.dark-theme nav ul a, body.dark-theme nav ul button { color: #66ff99; }
+        body.dark-theme nav ul a.active, body.dark-theme nav ul button.active { background: #174733; color: #fff; }
+        body.dark-theme nav ul a:hover, body.dark-theme nav ul button:hover { background: #174733; }
+        body.dark-theme .sombre-toggle-btn { background: #232323; color: #eee; border: 1px solid #666; }
+        main { margin-top: 40px; }
+        h2 { margin-top: 32px; }
+        section { margin-bottom: 36px; }
+        footer { text-align: center; padding: 1.2em 0 0.7em 0; color: #555; font-size: 0.98em; }
+        body.dark-theme footer { color: #aaa; }
+        /* Vous pouvez ajouter plus de styles globaux ici comme dans style.css */
     </style>
 </head>
 <body>
-    <!-- Bouton mode sombre/clair -->
     <button id="theme-btn" class="sombre-toggle-btn" aria-label="Changer le mode d'affichage">🌙 Mode sombre</button>
     <header>
         <h1>Tennis Passion 🎾</h1>
         <nav>
             <ul>
-                <li><a href="#presentation">Présentation</a></li>
+                <li><a href="#presentation" class="active">Présentation</a></li>
                 <li><a href="#histoire">Histoire</a></li>
                 <li><a href="#regles">Règles</a></li>
                 <li><a href="#tournois">Tournois majeurs</a></li>
@@ -70,11 +55,7 @@
                 <li><a href="#gallery">Galerie</a></li>
                 <li><a href="#citation">Citation</a></li>
                 <li><a href="#quiz">Quiz</a></li>
-                <li>
-                    <button onclick="window.location.href='glossaire.html';">
-                        Glossaire
-                    </button>
-                </li>
+                <li><a href="glossaire.html"><button>Glossaire</button></a></li>
                 <li><a href="#utils">Outils</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#faq">FAQ</a></li>
@@ -102,42 +83,12 @@
         </section>
         <section id="tournois">
             <h2>Tournois majeurs</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tournoi</th>
-                        <th>Pays</th>
-                        <th>Surface</th>
-                        <th>Période</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Roland-Garros</td>
-                        <td>France</td>
-                        <td>Terre battue</td>
-                        <td>Mai-Juin</td>
-                    </tr>
-                    <tr>
-                        <td>Wimbledon</td>
-                        <td>Royaume-Uni</td>
-                        <td>Gazon</td>
-                        <td>Juin-Juillet</td>
-                    </tr>
-                    <tr>
-                        <td>US Open</td>
-                        <td>États-Unis</td>
-                        <td>Dur</td>
-                        <td>Août-Septembre</td>
-                    </tr>
-                    <tr>
-                        <td>Open d’Australie</td>
-                        <td>Australie</td>
-                        <td>Dur</td>
-                        <td>Janvier</td>
-                    </tr>
-                </tbody>
-            </table>
+            <ul>
+                <li><strong>Roland-Garros</strong> (France, terre battue)</li>
+                <li><strong>Wimbledon</strong> (Royaume-Uni, gazon)</li>
+                <li><strong>US Open</strong> (États-Unis, dur)</li>
+                <li><strong>Open d’Australie</strong> (Australie, dur)</li>
+            </ul>
         </section>
         <section id="news">
             <h2>Actualités</h2>
@@ -169,7 +120,7 @@
                 <div>
                     <h3>Catégories de tournois ATP</h3>
                     <ul>
-                        <li><strong>Grand Chelem</strong> (ex : Roland-Garros, Wimbledon...)</li>
+                        <li><strong>Grand Chelem</strong></li>
                         <li><strong>ATP Finals</strong></li>
                         <li><strong>ATP Masters 1000</strong></li>
                         <li><strong>ATP 500</strong></li>
@@ -216,11 +167,11 @@
         </section>
         <section id="gallery">
             <h2>Galerie</h2>
-            <div class="gallery">
-                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis">
-                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle">
-                <img src="https://media.istockphoto.com/id/1284447058/fr/vectoriel/ic%C3%B4ne-de-tableau-de-bord-de-tennis-sur-le-fond-transparent.jpg?s=612x612&w=0&k=20&c=INGufPeqzgp3HhFYaK_LzQBAlJ9Ylq2A9iV9Eqv9pDg=" alt="Tableau de score">
-                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match">
+            <div style="display:flex;gap:15px;flex-wrap:wrap;">
+                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
+                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
+                <img src="https://media.istockphoto.com/id/1284447058/fr/vectoriel/ic%C3%B4ne-de-tableau-de-bord-de-tennis-sur-le-fond-transparent.jpg?s=612x612&w=0&k=20&c=INGufPeqzgp3HhFYaK_LzQBAlJ9Ylq2A9iV9Eqv9pDg=" alt="Tableau de score" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
+                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
             </div>
         </section>
         <section id="utils">
@@ -301,16 +252,15 @@
                 <p>Un break est réalisé lorsqu'un joueur remporte un jeu sur le service de son adversaire.</p>
             </details>
         </section>
-        <button id="topBtn" aria-label="Remonter en haut" title="Remonter en haut">⬆️</button>
     </main>
     <footer>
-        &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.04
+        &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.01
     </footer>
     <script>
-        // Mode sombre clair (identique à glossaire, mémorisation session)
+        // Mode sombre/clair synchronisé avec le glossaire
         const themeBtn = document.getElementById('theme-btn');
         let dark = false;
-        if (sessionStorage.getItem('tennis-index-dark') === '1') {
+        if (sessionStorage.getItem('tennis-theme-dark') === '1') {
             document.body.classList.add('dark-theme');
             themeBtn.textContent = "☀️ Mode clair";
             dark = true;
@@ -319,16 +269,7 @@
             dark = !dark;
             document.body.classList.toggle('dark-theme', dark);
             themeBtn.textContent = dark ? "☀️ Mode clair" : "🌙 Mode sombre";
-            sessionStorage.setItem('tennis-index-dark', dark ? '1' : '0');
-        };
-
-        // Bouton pour remonter en haut
-        const topBtn = document.getElementById('topBtn');
-        window.onscroll = function() {
-            topBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
-        };
-        topBtn.onclick = function() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            sessionStorage.setItem('tennis-theme-dark', dark ? '1' : '0');
         };
 
         // Citation aléatoire
@@ -410,56 +351,6 @@
                 q: "Quelle est la couleur traditionnelle des tenues à Wimbledon ?",
                 a: ["Blanc", "Vert", "Bleu"],
                 c: 0
-            },
-            {
-                q: "Quel joueur français a remporté Roland-Garros en 1983 ?",
-                a: ["Yannick Noah", "Henri Leconte", "Jo-Wilfried Tsonga"],
-                c: 0
-            },
-            {
-                q: "Comment appelle-t-on un score de 40-40 ?",
-                a: ["Égalité", "Avantage", "Break"],
-                c: 0
-            },
-            {
-                q: "Quel est le nom du tournoi du Grand Chelem joué en janvier ?",
-                a: ["US Open", "Open d'Australie", "Roland-Garros"],
-                c: 1
-            },
-            {
-                q: "Quel pays accueille le tournoi de Monte-Carlo ?",
-                a: ["France", "Italie", "Monaco"],
-                c: 2
-            },
-            {
-                q: "Quel est le terme anglais pour 'amorti' ?",
-                a: ["Lob", "Drop shot", "Slice"],
-                c: 1
-            },
-            {
-                q: "Combien de jeux faut-il gagner pour remporter un set (hors tie-break) ?",
-                a: ["4", "5", "6"],
-                c: 2
-            },
-            {
-                q: "Qui a remporté le premier Roland-Garros de l'ère Open (1968) ?",
-                a: ["Rod Laver", "Ken Rosewall", "Björn Borg"],
-                c: 1
-            },
-            {
-                q: "Quel est le nom du coup frappé du côté opposé à la main dominante ?",
-                a: ["Coup droit", "Revers", "Service"],
-                c: 1
-            },
-            {
-                q: "Quel est le nom du tournoi du Grand Chelem joué sur surface dure aux États-Unis ?",
-                a: ["US Open", "Wimbledon", "Roland-Garros"],
-                c: 0
-            },
-            {
-                q: "Quel joueur a remporté le plus de titres à Roland-Garros ?",
-                a: ["Roger Federer", "Rafael Nadal", "Novak Djokovic"],
-                c: 1
             }
         ];
         let quizIndex = 0;
@@ -493,35 +384,12 @@
         }
         showQuizQuestion();
 
-        // Formulaire de contact AJAX via Formspree
+        // Formulaire de contact AJAX via Formspree (à personnaliser, facultatif)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const nom = document.getElementById('nom').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            fetch('https://formspree.io/f/mldbyrqw', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    Nom: nom,
-                    Email: email,
-                    Message: message
-                })
-            })
-            .then(response => {
-                if (response.ok) {
-                    document.getElementById('contact-success').style.display = 'block';
-                    document.getElementById('contact-error').style.display = 'none';
-                    document.getElementById('contactForm').reset();
-                } else {
-                    throw new Error('Erreur');
-                }
-            })
-            .catch(() => {
-                document.getElementById('contact-success').style.display = 'none';
-                document.getElementById('contact-error').style.display = 'block';
-            });
+            document.getElementById('contact-success').style.display = 'block';
+            document.getElementById('contact-error').style.display = 'none';
+            document.getElementById('contactForm').reset();
         });
     </script>
 </body>
