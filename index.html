@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tennis Passion</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body { max-width: 1100px; margin: auto; font-family: Arial, sans-serif; background: #fff; color: #111; transition: background 0.4s, color 0.4s; }
+        header, main, footer { width: 100%; }
+        header { margin-bottom: 24px; }
+        nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 1em 0 0 0; }
+        nav ul li { margin: 0; }
+        nav ul a, nav ul button { background: none; color: #007b43; border: none; padding: 8px 14px; cursor: pointer; font-size: 1em; border-radius: 5px; text-decoration: none; }
+        nav ul a:hover, nav ul button:hover { background: #e3ffe8; }
+        .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .gallery img { width: 220px; height: 140px; object-fit: cover; border-radius: 7px; border: 1px solid #ccc; }
+        table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+        th, td { border: 1px solid #bbb; padding: 8px 12px; text-align: center; }
+        th { background: #e7ffe7; }
+        section { margin-bottom: 36px; }
+        #topBtn { position: fixed; bottom: 22px; right: 28px; z-index: 99; padding: 10px 18px; background: #007b43; color: #fff; border: none; border-radius: 50%; font-size: 1.3em; display: none; cursor: pointer; }
+        #topBtn:hover { background: #005e33; }
+        footer { text-align: center; padding: 1.2em 0 0.7em 0; color: #555; font-size: 0.98em; }
+
+        /* Mode sombre */
+        body.dark-theme { background: #131313; color: #e7e7e7; }
+        body.dark-theme th, body.dark-theme td { border-color: #444; }
+        body.dark-theme th { background: #233d2b; }
+        body.dark-theme nav ul a, body.dark-theme nav ul button { color: #66ff99; }
+        body.dark-theme nav ul a:hover, body.dark-theme nav ul button:hover { background: #174733; }
+        body.dark-theme .gallery img { border-color: #444; }
+        body.dark-theme #topBtn { background: #232323; color: #77ffa3; }
+        body.dark-theme #topBtn:hover { background: #174733; }
+        body.dark-theme footer { color: #aaa; }
+        .sombre-toggle-btn {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            z-index: 1000;
+            background: #eee;
+            border: 1px solid #bbb;
+            border-radius: 20px;
+            padding: 7px 14px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.2s;
+        }
+        body.dark-theme .sombre-toggle-btn {
+            background: #232323;
+            color: #eee;
+            border: 1px solid #666;
+        }
+    </style>
 </head>
 <body>
+    <!-- Bouton mode sombre/clair -->
+    <button id="theme-btn" class="sombre-toggle-btn" aria-label="Changer le mode d'affichage">🌙 Mode sombre</button>
     <header>
         <h1>Tennis Passion 🎾</h1>
         <nav>
@@ -22,7 +71,7 @@
                 <li><a href="#citation">Citation</a></li>
                 <li><a href="#quiz">Quiz</a></li>
                 <li>
-                    <button onclick="window.location.href='glossaire.html';" style="padding:6px 14px;cursor:pointer;font-size:1em;border-radius:5px;background:#eee;border:1px solid #bbb;margin-left:3px;">
+                    <button onclick="window.location.href='glossaire.html';">
                         Glossaire
                     </button>
                 </li>
@@ -255,9 +304,24 @@
         <button id="topBtn" aria-label="Remonter en haut" title="Remonter en haut">⬆️</button>
     </main>
     <footer>
-        <p>&copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.01</p>
+        &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.04
     </footer>
     <script>
+        // Mode sombre clair (identique à glossaire, mémorisation session)
+        const themeBtn = document.getElementById('theme-btn');
+        let dark = false;
+        if (sessionStorage.getItem('tennis-index-dark') === '1') {
+            document.body.classList.add('dark-theme');
+            themeBtn.textContent = "☀️ Mode clair";
+            dark = true;
+        }
+        themeBtn.onclick = () => {
+            dark = !dark;
+            document.body.classList.toggle('dark-theme', dark);
+            themeBtn.textContent = dark ? "☀️ Mode clair" : "🌙 Mode sombre";
+            sessionStorage.setItem('tennis-index-dark', dark ? '1' : '0');
+        };
+
         // Bouton pour remonter en haut
         const topBtn = document.getElementById('topBtn');
         window.onscroll = function() {
@@ -459,21 +523,6 @@
                 document.getElementById('contact-error').style.display = 'block';
             });
         });
-
-        // Thème clair/sombre
-        const themeBtn = document.createElement('button');
-        themeBtn.textContent = "🌙 Mode sombre";
-        themeBtn.style.position = "fixed";
-        themeBtn.style.top = "10px";
-        themeBtn.style.right = "10px";
-        themeBtn.style.zIndex = "1000";
-        document.body.appendChild(themeBtn);
-        let dark = false;
-        themeBtn.onclick = () => {
-            dark = !dark;
-            document.body.classList.toggle('dark-theme', dark);
-            themeBtn.textContent = dark ? "☀️ Mode clair" : "🌙 Mode sombre";
-        };
     </script>
 </body>
 </html>
