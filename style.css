@@ -1,0 +1,242 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background: #1a8f4c;
+    color: #fff;
+    padding: 30px 0 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+nav a:hover, nav a:focus {
+    background: #146c38;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #1a8f4c;
+    margin-bottom: 12px;
+    font-size: 1.7em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 4px;
+}
+
+h3 {
+    color: #146c38;
+    margin-bottom: 6px;
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 18px;
+}
+
+th, td {
+    border: 1px solid #cce5d3;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #e6f9ee;
+    color: #146c38;
+}
+
+.classement-tables {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.classement-tables table {
+    min-width: 220px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+details {
+    margin-bottom: 10px;
+    background: #f1fdf6;
+    border-left: 4px solid #1a8f4c;
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #146c38;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+input, textarea {
+    padding: 8px;
+    border: 1px solid #b2d8c6;
+    border-radius: 4px;
+    font-size: 1em;
+    background: #f9f9f9;
+}
+
+button[type="submit"], #quiz-answers button, #quiz button, #citation button {
+    background: #1a8f4c;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#quiz-answers button {
+    min-width: 180px;
+    padding: 10px 0;
+    margin: 5px 10px 5px 0;
+    font-size: 1em;
+    display: inline-block;
+}
+
+button[type="submit"]:hover, #quiz-answers button:hover, #quiz button:hover, #citation button:hover {
+    background: #146c38;
+}
+
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    background: #1a8f4c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.7em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 100;
+    transition: background 0.2s;
+}
+
+#topBtn:hover {
+    background: #146c38;
+}
+
+footer {
+    text-align: center;
+    padding: 18px 0;
+    background: #e6f9ee;
+    color: #146c38;
+    margin-top: 40px;
+    border-radius: 0 0 12px 12px;
+    font-size: 1em;
+}
+
+/* Mode sombre */
+.dark-theme {
+    background: #181818;
+    color: #eee;
+}
+.dark-theme header,
+.dark-theme footer {
+    background: #222;
+    color: #fff;
+}
+.dark-theme main {
+    background: #232323;
+    color: #eee;
+}
+.dark-theme table, .dark-theme th, .dark-theme td {
+    background: #232323;
+    color: #eee;
+    border-color: #444;
+}
+.dark-theme a { color: #8fd6ff; }
+.dark-theme details {
+    background: #232323;
+    border-left: 4px solid #8fd6ff;
+}
+.dark-theme input, .dark-theme textarea {
+    background: #222;
+    color: #eee;
+    border-color: #444;
+}

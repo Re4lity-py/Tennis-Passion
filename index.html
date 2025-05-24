@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Passion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tennis Passion 🎾</h1>
+        <nav>
+            <ul>
+                <li><a href="#presentation">Présentation</a></li>
+                <li><a href="#histoire">Histoire</a></li>
+                <li><a href="#regles">Règles</a></li>
+                <li><a href="#tournois">Tournois majeurs</a></li>
+                <li><a href="#news">Actualités</a></li>
+                <li><a href="#classement">Classement</a></li>
+                <li><a href="#players">Joueurs célèbres</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#citation">Citation</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#utils">Outils</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="presentation">
+            <h2>Présentation</h2>
+            <p>Le tennis est un sport de raquette passionnant, pratiqué partout dans le monde. Il se joue en simple ou en double, sur différentes surfaces : terre battue, gazon, dur…</p>
+        </section>
+        <section id="histoire">
+            <h2>Histoire du tennis</h2>
+            <p>Le tennis moderne trouve ses origines au XIX<sup>e</sup> siècle en Angleterre. Il s’est inspiré du jeu de paume, pratiqué en France dès le Moyen Âge. Aujourd’hui, le tennis est un sport olympique et l’un des plus populaires au monde.</p>
+        </section>
+        <section id="regles">
+            <h2>Règles du jeu</h2>
+            <ul>
+                <li>Le match se joue en 2 ou 3 sets gagnants.</li>
+                <li>Un set est remporté par le premier joueur à atteindre 6 jeux avec 2 jeux d’écart.</li>
+                <li>Le service alterne à chaque jeu.</li>
+                <li>La balle doit rebondir dans le carré de service adverse lors du service.</li>
+                <li>Les points se comptent : 15, 30, 40, jeu.</li>
+            </ul>
+        </section>
+        <section id="tournois">
+            <h2>Tournois majeurs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tournoi</th>
+                        <th>Pays</th>
+                        <th>Surface</th>
+                        <th>Période</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Roland-Garros</td>
+                        <td>France</td>
+                        <td>Terre battue</td>
+                        <td>Mai-Juin</td>
+                    </tr>
+                    <tr>
+                        <td>Wimbledon</td>
+                        <td>Royaume-Uni</td>
+                        <td>Gazon</td>
+                        <td>Juin-Juillet</td>
+                    </tr>
+                    <tr>
+                        <td>US Open</td>
+                        <td>États-Unis</td>
+                        <td>Dur</td>
+                        <td>Août-Septembre</td>
+                    </tr>
+                    <tr>
+                        <td>Open d’Australie</td>
+                        <td>Australie</td>
+                        <td>Dur</td>
+                        <td>Janvier</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="news">
+            <h2>Actualités</h2>
+            <article>
+                <h3>Roland-Garros 2025 : Le tableau messieurs</h3>
+                <p>
+                    <a href="https://www.lequipe.fr/Tennis/roland-garros/epreuve-simple-messieurs/page-tableau-tournoi" target="_blank" rel="noopener">
+                        Découvrez les matchs à suivre cette année.
+                    </a>
+                </p>
+            </article>
+            <article>
+                <h3>Autres actualités :</h3>
+                <p>
+                    <a href="https://www.lequipe.fr/Tennis/" target="_blank" rel="noopener">
+                        Dernières infos sur le Tennis.
+                    </a>
+                </p>
+            </article>
+        </section>
+        <section id="classement">
+            <h2>Classement & Catégories de tournois</h2>
+            <p>
+                <a href="https://www.atptour.com/en/rankings/singles" target="_blank" rel="noopener">
+                    Voir le classement ATP en direct
+                </a>
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+                <div>
+                    <h3>Catégories de tournois ATP</h3>
+                    <ul>
+                        <li><strong>Grand Chelem</strong> (ex : Roland-Garros, Wimbledon...)</li>
+                        <li><strong>ATP Finals</strong></li>
+                        <li><strong>ATP Masters 1000</strong></li>
+                        <li><strong>ATP 500</strong></li>
+                        <li><strong>ATP 250</strong></li>
+                        <li><strong>Challenger</strong></li>
+                        <li><strong>Futures</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Catégories de tournois WTA</h3>
+                    <ul>
+                        <li><strong>Grand Chelem</strong></li>
+                        <li><strong>WTA Finals</strong></li>
+                        <li><strong>WTA 1000</strong></li>
+                        <li><strong>WTA 500</strong></li>
+                        <li><strong>WTA 250</strong></li>
+                        <li><strong>ITF</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="citation">
+            <h2>Citation du jour</h2>
+            <blockquote id="quote"></blockquote>
+            <button onclick="randomQuote()">Nouvelle citation</button>
+        </section>
+        <section id="quiz">
+            <h2>Quiz Tennis</h2>
+            <div id="quiz-question"></div>
+            <div id="quiz-answers"></div>
+            <div id="quiz-result"></div>
+            <button onclick="nextQuizQuestion()">Question suivante</button>
+        </section>
+        <section id="players">
+            <h2>Joueurs célèbres</h2>
+            <ul>
+                <li><strong>Rafael Nadal</strong> – Roi de la terre battue</li>
+                <li><strong>Serena Williams</strong> – Légende du tennis féminin</li>
+                <li><strong>Roger Federer</strong> – Maître du gazon</li>
+                <li><strong>Novak Djokovic</strong> – Champion polyvalent</li>
+                <li><strong>Steffi Graf</strong> – Détentrice du Golden Slam</li>
+                <li><strong>Arthur Fils</strong> – Étoile montante</li>
+            </ul>
+        </section>
+        <section id="gallery">
+            <h2>Galerie</h2>
+            <div class="gallery">
+                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis">
+                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle">
+                <img src="https://media.istockphoto.com/id/1284447058/fr/vectoriel/ic%C3%B4ne-de-tableau-de-bord-de-tennis-sur-le-fond-transparent.jpg?s=612x612&w=0&k=20&c=INGufPeqzgp3HhFYaK_LzQBCwQy6dy9h10tG5w4Cm_s=" alt="Score de tennis">
+                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match">
+            </div>
+        </section>
+        <section id="utils">
+            <h2>Outils utiles pour les joueurs</h2>
+            <ul>
+                <li>
+                    <a href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener">Scores en direct ATP</a>
+                </li>
+                <li>
+                    <a href="https://www.wtatennis.com/scores" target="_blank" rel="noopener">Scores en direct WTA</a>
+                </li>
+                <li>
+                    <a href="https://www.tennisexplorer.com/" target="_blank" rel="noopener">Statistiques et résultats Tennis Explorer</a>
+                </li>
+                <li>
+                    <a href="https://www.tenniswarehouse-europe.com/" target="_blank" rel="noopener">Acheter du matériel de tennis</a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/results?search_query=exercices+tennis" target="_blank" rel="noopener">Vidéos d’exercices et d’entraînement</a>
+                </li>
+                <li>
+                    <a href="https://www.tennis-temple.com/calendrier/" target="_blank" rel="noopener">Calendrier des tournois</a>
+                </li>
+                <li>
+                    <a href="https://www.tennis.com/rules-and-equipment" target="_blank" rel="noopener">Règles officielles du tennis (en anglais)</a>
+                </li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form id="contactForm">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="Nom" required>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="Email" required>
+                <label for="message">Votre question :</label>
+                <textarea id="message" name="Message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+            <div id="contact-success" style="display:none;color:green;margin-top:10px;">
+                Merci, votre message a bien été envoyé !
+            </div>
+            <div id="contact-error" style="display:none;color:red;margin-top:10px;">
+                Une erreur est survenue. Veuillez réessayer plus tard.
+            </div>
+        </section>
+        <section id="faq">
+            <h2>FAQ</h2>
+            <details>
+                <summary>Quelle est la durée d’un match de tennis ?</summary>
+                <p>La durée varie selon le format et le niveau des joueurs. Un match peut durer de moins d’une heure à plus de cinq heures pour les plus longs.</p>
+            </details>
+            <details>
+                <summary>Combien de joueurs sur le terrain ?</summary>
+                <p>En simple : 2 joueurs. En double : 4 joueurs (2 équipes de 2).</p>
+            </details>
+            <details>
+                <summary>Quelles sont les surfaces de jeu principales ?</summary>
+                <p>Terre battue, gazon, dur (béton ou résine).</p>
+            </details>
+            <details>
+                <summary>Comment se déroule un tie-break ?</summary>
+                <p>Le tie-break se joue en 7 points (avec 2 points d'écart minimum). Les joueurs changent de côté tous les 6 points.</p>
+            </details>
+            <details>
+                <summary>Qu'est-ce qu'un "ace" ?</summary>
+                <p>Un ace est un service gagnant, c'est-à-dire que l'adversaire ne touche pas la balle.</p>
+            </details>
+            <details>
+                <summary>Peut-on toucher le filet avec la raquette ?</summary>
+                <p>Non, toucher le filet avec la raquette ou le corps entraîne la perte du point.</p>
+            </details>
+            <details>
+                <summary>Qu'est-ce qu'un "let" au service ?</summary>
+                <p>Un "let" est annoncé si la balle touche le filet mais tombe dans le carré de service. Le service est alors à rejouer.</p>
+            </details>
+            <details>
+                <summary>Combien de fois peut-on laisser rebondir la balle ?</summary>
+                <p>Une seule fois. Si la balle rebondit deux fois, le point est perdu.</p>
+            </details>
+            <details>
+                <summary>Peut-on jouer la balle en dehors du terrain ?</summary>
+                <p>Oui, tant que la balle retombe dans le terrain adverse, le joueur peut la frapper même en dehors des limites du terrain.</p>
+            </details>
+            <details>
+                <summary>Qu'est-ce qu'un "break" ?</summary>
+                <p>Un break est réalisé lorsqu'un joueur remporte un jeu sur le service de son adversaire.</p>
+            </details>
+        </section>
+        <button id="topBtn" aria-label="Remonter en haut" title="Remonter en haut">⬆️</button>
+    </main>
+    <footer>
+        <p>&copy; Re4lity-py</p>
+    </footer>
+    <script>
+        // Bouton pour remonter en haut
+        const topBtn = document.getElementById('topBtn');
+        window.onscroll = function() {
+            topBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
+        };
+        topBtn.onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+
+        // Citation aléatoire
+        const quotes = [
+            "Le tennis, c’est 90% mental et 10% physique. – Jimmy Connors",
+            "Le succès, c’est tomber sept fois, se relever huit. – Serena Williams",
+            "Jouer au tennis, c’est comme une partie d’échecs en mouvement. – Novak Djokovic",
+            "Le plus important, c’est de croire en soi. – Roger Federer",
+            "Le tennis est un sport solitaire, mais il faut savoir s’entourer. – Rafael Nadal",
+            "Il n’y a pas de raccourci vers nulle part où cela en vaille la peine. – Beverly Sills",
+            "La pression est un privilège. – Billie Jean King",
+            "On ne perd jamais, soit on gagne, soit on apprend. – Nelson Mandela",
+            "Le talent gagne des matchs, mais le travail d’équipe et l’intelligence gagnent des championnats. – Michael Jordan",
+            "Le tennis est un sport de gentlemen pratiqué par des voyous et un sport de voyous pratiqué par des gentlemen. – Jim Courier",
+            "La victoire appartient au plus persévérant. – Napoléon Bonaparte",
+            "Le plus dur, ce n’est pas de gagner, c’est de continuer à gagner. – Martina Navratilova",
+            "Le tennis, c’est la recherche de la perfection dans l’imperfection. – Andre Agassi",
+            "Le mental fait la différence au plus haut niveau. – Andy Murray",
+            "Il faut toujours croire en ses rêves. – Naomi Osaka",
+            "Le tennis est un jeu de patience et de stratégie. – Pete Sampras",
+            "La défaite n’est qu’un tremplin vers la victoire. – Stanislas Wawrinka",
+            "Le respect de l’adversaire est la première règle du tennis. – Rod Laver",
+            "Le tennis, c’est l’art de transformer la pression en plaisir. – Simona Halep",
+            "Le plus important, c’est de donner le meilleur de soi-même. – Justine Henin"
+        ];
+        function randomQuote() {
+            document.getElementById('quote').textContent = quotes[Math.floor(Math.random() * quotes.length)];
+        }
+        randomQuote();
+
+        // Quiz Tennis
+        const quiz = [
+            {
+                q: "Combien de sets faut-il gagner pour remporter un match du Grand Chelem masculin ?",
+                a: ["2", "3", "4"],
+                c: 1
+            },
+            {
+                q: "Quelle surface est utilisée à Roland-Garros ?",
+                a: ["Gazon", "Terre battue", "Dur"],
+                c: 1
+            },
+            {
+                q: "Quel joueur détient le plus de titres du Grand Chelem ?",
+                a: ["Rafael Nadal", "Roger Federer", "Novak Djokovic"],
+                c: 2
+            },
+            {
+                q: "Quel tournoi est surnommé 'The Championships' ?",
+                a: ["US Open", "Wimbledon", "Open d'Australie"],
+                c: 1
+            },
+            {
+                q: "Combien de joueurs sur le terrain lors d'un double ?",
+                a: ["2", "3", "4"],
+                c: 2
+            },
+            {
+                q: "Comment s'appelle le coup joué juste après le service ?",
+                a: ["La volée", "Le retour", "Le smash"],
+                c: 1
+            },
+            {
+                q: "Quel est le score minimum pour gagner un tie-break ?",
+                a: ["7 points", "6 points", "10 points"],
+                c: 0
+            },
+            {
+                q: "Qui est la première joueuse à avoir remporté 23 titres du Grand Chelem en simple ?",
+                a: ["Serena Williams", "Steffi Graf", "Martina Navratilova"],
+                c: 0
+            },
+            {
+                q: "Quel est le surnom de Rafael Nadal ?",
+                a: ["Le Maître", "Le Taureau de Manacor", "Le Magicien"],
+                c: 1
+            },
+            {
+                q: "Quelle est la couleur traditionnelle des tenues à Wimbledon ?",
+                a: ["Blanc", "Vert", "Bleu"],
+                c: 0
+            },
+            {
+                q: "Quel joueur français a remporté Roland-Garros en 1983 ?",
+                a: ["Yannick Noah", "Henri Leconte", "Jo-Wilfried Tsonga"],
+                c: 0
+            },
+            {
+                q: "Comment appelle-t-on un score de 40-40 ?",
+                a: ["Égalité", "Avantage", "Break"],
+                c: 0
+            },
+            {
+                q: "Quel est le nom du tournoi du Grand Chelem joué en janvier ?",
+                a: ["US Open", "Open d'Australie", "Roland-Garros"],
+                c: 1
+            },
+            {
+                q: "Quel pays accueille le tournoi de Monte-Carlo ?",
+                a: ["France", "Italie", "Monaco"],
+                c: 2
+            },
+            {
+                q: "Quel est le terme anglais pour 'amorti' ?",
+                a: ["Lob", "Drop shot", "Slice"],
+                c: 1
+            },
+            {
+                q: "Combien de jeux faut-il gagner pour remporter un set (hors tie-break) ?",
+                a: ["4", "5", "6"],
+                c: 2
+            },
+            {
+                q: "Qui a remporté le premier Roland-Garros de l'ère Open (1968) ?",
+                a: ["Rod Laver", "Ken Rosewall", "Björn Borg"],
+                c: 1
+            },
+            {
+                q: "Quel est le nom du coup frappé du côté opposé à la main dominante ?",
+                a: ["Coup droit", "Revers", "Service"],
+                c: 1
+            },
+            {
+                q: "Quel est le nom du tournoi du Grand Chelem joué sur surface dure aux États-Unis ?",
+                a: ["US Open", "Wimbledon", "Roland-Garros"],
+                c: 0
+            },
+            {
+                q: "Quel joueur a remporté le plus de titres à Roland-Garros ?",
+                a: ["Roger Federer", "Rafael Nadal", "Novak Djokovic"],
+                c: 1
+            }
+        ];
+        let quizIndex = 0;
+        function showQuizQuestion() {
+            const q = quiz[quizIndex];
+            document.getElementById('quiz-question').textContent = q.q;
+            const answersDiv = document.getElementById('quiz-answers');
+            answersDiv.innerHTML = '';
+            q.a.forEach((ans, i) => {
+                const btn = document.createElement('button');
+                btn.textContent = ans;
+                btn.onclick = () => {
+                    if (i === q.c) {
+                        document.getElementById('quiz-result').textContent = "Bonne réponse !";
+                    } else {
+                        document.getElementById('quiz-result').textContent = `Mauvaise réponse. La bonne réponse était : "${q.a[q.c]}"`;
+                    }
+                };
+                answersDiv.appendChild(btn);
+            });
+            document.getElementById('quiz-result').textContent = '';
+        }
+        function nextQuizQuestion() {
+            quizIndex = (quizIndex + 1) % quiz.length;
+            showQuizQuestion();
+        }
+        showQuizQuestion();
+
+        // Formulaire de contact AJAX via Formspree
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            fetch('https://formspree.io/f/mldbyrqw', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    Nom: nom,
+                    Email: email,
+                    Message: message
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('contact-success').style.display = 'block';
+                    document.getElementById('contact-error').style.display = 'none';
+                    document.getElementById('contactForm').reset();
+                } else {
+                    throw new Error('Erreur');
+                }
+            })
+            .catch(() => {
+                document.getElementById('contact-success').style.display = 'none';
+                document.getElementById('contact-error').style.display = 'block';
+            });
+        });
+
+        // Thème clair/sombre
+        const themeBtn = document.createElement('button');
+        themeBtn.textContent = "🌙 Mode sombre";
+        themeBtn.style.position = "fixed";
+        themeBtn.style.top = "10px";
+        themeBtn.style.right = "10px";
+        themeBtn.style.zIndex = "1000";
+        document.body.appendChild(themeBtn);
+        let dark = false;
+        themeBtn.onclick = () => {
+            dark = !dark;
+            document.body.classList.toggle('dark-theme', dark);
+            themeBtn.textContent = dark ? "☀️ Mode clair" : "🌙 Mode sombre";
+        };
+    </script>
+</body>
+</html>
