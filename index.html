@@ -34,7 +34,7 @@
         </section>
         <section id="histoire">
             <h2>Histoire du tennis</h2>
-            <p>Le tennis moderne trouve ses origines au XIX<sup>e</sup> siècle en Angleterre. Il s’est inspiré du jeu de paume, pratiqué en France dès le Moyen Âge. Aujourd’hui, le tennis est un sport olympique et l’un des plus populaires au monde.</p>
+            <p>Le tennis moderne trouve ses origines au XIX<sup>e</sup> siècle en Angleterre. Il s’est inspiré du jeu de paume, pratiqué en France dès le Moyen Âge. Aujourd’hui, le tennis est un sport professionnel mondialement suivi.</p>
         </section>
         <section id="regles">
             <h2>Règles du jeu</h2>
@@ -165,7 +165,7 @@
             <div class="gallery">
                 <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis">
                 <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle">
-                <img src="https://media.istockphoto.com/id/1284447058/fr/vectoriel/ic%C3%B4ne-de-tableau-de-bord-de-tennis-sur-le-fond-transparent.jpg?s=612x612&w=0&k=20&c=INGufPeqzgp3HhFYaK_LzQBCwQy6dy9h10tG5w4Cm_s=" alt="Score de tennis">
+                <img src="https://media.istockphoto.com/id/1284447058/fr/vectoriel/ic%C3%B4ne-de-tableau-de-bord-de-tennis-sur-le-fond-transparent.jpg?s=612x612&w=0&k=20&c=INGufPeqzgp3HhFYaK_LzQBAlJ9Ylq2A9iV9Eqv9pDg=" alt="Tableau de score">
                 <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match">
             </div>
         </section>
@@ -403,15 +403,20 @@
                 const btn = document.createElement('button');
                 btn.textContent = ans;
                 btn.onclick = () => {
+                    const resultDiv = document.getElementById('quiz-result');
                     if (i === q.c) {
-                        document.getElementById('quiz-result').textContent = "Bonne réponse !";
+                        resultDiv.textContent = "Bonne réponse !";
+                        resultDiv.style.color = "green";
                     } else {
-                        document.getElementById('quiz-result').textContent = `Mauvaise réponse. La bonne réponse était : "${q.a[q.c]}"`;
+                        resultDiv.textContent = `Mauvaise réponse. La bonne réponse était : "${q.a[q.c]}"`;
+                        resultDiv.style.color = "red";
                     }
                 };
                 answersDiv.appendChild(btn);
             });
-            document.getElementById('quiz-result').textContent = '';
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.textContent = '';
+            resultDiv.style.color = "";
         }
         function nextQuizQuestion() {
             quizIndex = (quizIndex + 1) % quiz.length;
