@@ -10,7 +10,7 @@
         header { margin-bottom: 24px; }
         nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 1em 0 0 0; }
         nav ul li { margin: 0; }
-        nav ul a, nav ul button {
+        nav ul a {
             background: #fff;
             color: #222;
             border: none;
@@ -22,13 +22,13 @@
             box-shadow: 0 1px 5px rgba(0,0,0,0.04);
             transition: background 0.15s, color 0.15s;
         }
-        nav ul a.active, nav ul button.active {
+        nav ul a.active {
             font-weight: bold;
             color: #fff;
             background: #007b43;
             pointer-events: none;
         }
-        nav ul a:hover, nav ul button:hover {
+        nav ul a:hover {
             background: #e8f8ec;
             color: #007b43;
         }
@@ -46,9 +46,9 @@
             transition: background 0.2s, color 0.2s;
         }
         body.dark-theme { background: #131313; color: #e7e7e7; }
-        body.dark-theme nav ul a, body.dark-theme nav ul button { color: #66ff99; background: #232323; box-shadow: none; }
-        body.dark-theme nav ul a.active, body.dark-theme nav ul button.active { background: #174733; color: #fff; }
-        body.dark-theme nav ul a:hover, body.dark-theme nav ul button:hover { background: #174733; color: #66ff99; }
+        body.dark-theme nav ul a { color: #66ff99; background: #232323; box-shadow: none; }
+        body.dark-theme nav ul a.active { background: #174733; color: #fff; }
+        body.dark-theme nav ul a:hover { background: #174733; color: #66ff99; }
         body.dark-theme .sombre-toggle-btn { background: #232323; color: #eee; border: 1px solid #666; }
         main { margin-top: 40px; }
         h2 { margin-top: 32px; }
@@ -73,7 +73,7 @@
                 <li><a href="#gallery">Galerie</a></li>
                 <li><a href="#citation">Citation</a></li>
                 <li><a href="#quiz">Quiz</a></li>
-                <li><a href="glossaire.html"><button>Glossaire</button></a></li>
+                <li><a href="glossaire.html" id="nav-glossaire">Glossaire</a></li>
                 <li><a href="#utils">Outils</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#faq">FAQ</a></li>
