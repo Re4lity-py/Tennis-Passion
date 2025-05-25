@@ -10,9 +10,28 @@
         header { margin-bottom: 24px; }
         nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 1em 0 0 0; }
         nav ul li { margin: 0; }
-        nav ul a, nav ul button { background: none; color: #007b43; border: none; padding: 8px 14px; cursor: pointer; font-size: 1em; border-radius: 5px; text-decoration: none; }
-        nav ul a.active, nav ul button.active { font-weight: bold; color: #fff; background: #007b43; pointer-events: none;}
-        nav ul a:hover, nav ul button:hover { background: #e3ffe8; }
+        nav ul a {
+            background: #fff;
+            color: #222;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+            transition: background 0.15s, color 0.15s;
+        }
+        nav ul a.active {
+            font-weight: bold;
+            color: #fff;
+            background: #007b43;
+            pointer-events: none;
+        }
+        nav ul a:hover {
+            background: #e8f8ec;
+            color: #007b43;
+        }
         .sombre-toggle-btn {
             position: fixed;
             top: 12px;
@@ -24,12 +43,12 @@
             padding: 7px 14px;
             cursor: pointer;
             font-size: 1em;
-            transition: background 0.2s;
+            transition: background 0.2s, color 0.2s;
         }
         body.dark-theme { background: #131313; color: #e7e7e7; }
-        body.dark-theme nav ul a, body.dark-theme nav ul button { color: #66ff99; }
-        body.dark-theme nav ul a.active, body.dark-theme nav ul button.active { background: #174733; color: #fff; }
-        body.dark-theme nav ul a:hover, body.dark-theme nav ul button:hover { background: #174733; }
+        body.dark-theme nav ul a { color: #66ff99; background: #232323; box-shadow: none; }
+        body.dark-theme nav ul a.active { background: #174733; color: #fff; }
+        body.dark-theme nav ul a:hover { background: #174733; color: #66ff99; }
         body.dark-theme .sombre-toggle-btn { background: #232323; color: #eee; border: 1px solid #666; }
         main { margin-top: 40px; }
         h2 { margin-top: 32px; }
@@ -67,7 +86,7 @@
                 <li><a href="index.html#gallery">Galerie</a></li>
                 <li><a href="index.html#citation">Citation</a></li>
                 <li><a href="index.html#quiz">Quiz</a></li>
-                <li><button class="active">Glossaire</button></li>
+                <li><a href="glossaire.html" class="active" id="nav-glossaire">Glossaire</a></li>
                 <li><a href="index.html#utils">Outils</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
                 <li><a href="index.html#faq">FAQ</a></li>
@@ -198,7 +217,7 @@
         &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.02
     </footer>
     <script>
-        // Mode sombre clair
+        // Mode sombre/clair
         const themeBtn = document.getElementById('theme-btn');
         let dark = false;
         if (sessionStorage.getItem('tennis-glossaire-dark') === '1') {
