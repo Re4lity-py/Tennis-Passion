@@ -5,14 +5,52 @@
     <title>Tennis Passion</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body { max-width: 1100px; margin: auto; font-family: Arial, sans-serif; background: #fff; color: #111; transition: background 0.4s, color 0.4s; }
-        header, main, footer { width: 100%; }
-        header { margin-bottom: 24px; }
-        nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin: 1em 0 0 0; }
-        nav ul li { margin: 0; }
-        nav ul a, nav ul button { background: none; color: #007b43; border: none; padding: 8px 14px; cursor: pointer; font-size: 1em; border-radius: 5px; text-decoration: none; }
-        nav ul a.active, nav ul button.active { font-weight: bold; color: #fff; background: #007b43; pointer-events: none;}
-        nav ul a:hover, nav ul button:hover { background: #e3ffe8; }
+        body {
+            max-width: 1100px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            background: #fff;
+            color: #111;
+            transition: background 0.4s, color 0.4s;
+        }
+        header, main, footer {
+            width: 100%;
+        }
+        header {
+            margin-bottom: 24px;
+        }
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 1em 0 0 0;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul a {
+            background: none;
+            color: #007b43;
+            border: none;
+            padding: 8px 14px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+        }
+        nav ul a.active {
+            font-weight: bold;
+            color: #fff;
+            background: #007b43;
+            pointer-events: none;
+        }
+        nav ul a:hover {
+            background: #e3ffe8;
+        }
         .sombre-toggle-btn {
             position: fixed;
             top: 12px;
@@ -26,17 +64,43 @@
             font-size: 1em;
             transition: background 0.2s;
         }
-        body.dark-theme { background: #131313; color: #e7e7e7; }
-        body.dark-theme nav ul a, body.dark-theme nav ul button { color: #66ff99; }
-        body.dark-theme nav ul a.active, body.dark-theme nav ul button.active { background: #174733; color: #fff; }
-        body.dark-theme nav ul a:hover, body.dark-theme nav ul button:hover { background: #174733; }
-        body.dark-theme .sombre-toggle-btn { background: #232323; color: #eee; border: 1px solid #666; }
-        main { margin-top: 40px; }
-        h2 { margin-top: 32px; }
-        section { margin-bottom: 36px; }
-        footer { text-align: center; padding: 1.2em 0 0.7em 0; color: #555; font-size: 0.98em; }
-        body.dark-theme footer { color: #aaa; }
-        /* Vous pouvez ajouter plus de styles globaux ici comme dans style.css */
+        body.dark-theme {
+            background: #131313;
+            color: #e7e7e7;
+        }
+        body.dark-theme nav ul a {
+            color: #66ff99;
+        }
+        body.dark-theme nav ul a.active {
+            background: #174733;
+            color: #fff;
+        }
+        body.dark-theme nav ul a:hover {
+            background: #174733;
+        }
+        body.dark-theme .sombre-toggle-btn {
+            background: #232323;
+            color: #eee;
+            border: 1px solid #666;
+        }
+        main {
+            margin-top: 40px;
+        }
+        h2 {
+            margin-top: 32px;
+        }
+        section {
+            margin-bottom: 36px;
+        }
+        footer {
+            text-align: center;
+            padding: 1.2em 0 0.7em 0;
+            color: #555;
+            font-size: 0.98em;
+        }
+        body.dark-theme footer {
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -55,7 +119,7 @@
                 <li><a href="#gallery">Galerie</a></li>
                 <li><a href="#citation">Citation</a></li>
                 <li><a href="#quiz">Quiz</a></li>
-                <li><a href="glossaire.html"><button>Glossaire</button></a></li>
+                <li><a href="glossaire.html">Glossaire</a></li>
                 <li><a href="#utils">Outils</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#faq">FAQ</a></li>
@@ -69,7 +133,7 @@
         </section>
         <section id="histoire">
             <h2>Histoire du tennis</h2>
-            <p>Le tennis moderne trouve ses origines au XIX<sup>e</sup> siècle en Angleterre. Il s’est inspiré du jeu de paume, pratiqué en France dès le Moyen Âge. Aujourd’hui, le tennis est un sport professionnel mondialement suivi.</p>
+            <p>Le tennis moderne trouve ses origines au XIX<sup>e</sup> siècle en Angleterre, inspiré du jeu de paume pratiqué en France dès le Moyen Âge.</p>
         </section>
         <section id="regles">
             <h2>Règles du jeu</h2>
@@ -168,10 +232,10 @@
         <section id="gallery">
             <h2>Galerie</h2>
             <div style="display:flex;gap:15px;flex-wrap:wrap;">
-                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
-                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
-                <img src="https://media.istockphoto.com/id/1284447058/fr/vectoriel/ic%C3%B4ne-de-tableau-de-bord-de-tennis-sur-le-fond-transparent.jpg?s=612x612&w=0&k=20&c=INGufPeqzgp3HhFYaK_LzQBAlJ9Ylq2A9iV9Eqv9pDg=" alt="Tableau de score" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
-                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
+                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:6px;">
+                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle" style="width:220px;height:140px;object-fit:cover;border-radius:6px;">
+                <img src="https://media.istockphoto.com/id/1284447058/fr/vectoriel/ic%C3%B4ne-de-tableau-de-bord-de-tennis-sur-le-fond-transparent.jpg?s=612x612&w=0&k=20&c=INGufPeqzgp3HhFYaK_LzQBAlJ9YyU1yBv1K0t9jO9Q=" alt="Icône de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:6px;">
+                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match" style="width:220px;height:140px;object-fit:cover;border-radius:6px;">
             </div>
         </section>
         <section id="utils">
@@ -254,10 +318,10 @@
         </section>
     </main>
     <footer>
-        &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.01
+        &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.04
     </footer>
     <script>
-        // Mode sombre/clair synchronisé avec le glossaire
+        // Mode sombre/clair
         const themeBtn = document.getElementById('theme-btn');
         let dark = false;
         if (sessionStorage.getItem('tennis-theme-dark') === '1') {
@@ -384,7 +448,7 @@
         }
         showQuizQuestion();
 
-        // Formulaire de contact AJAX via Formspree (à personnaliser, facultatif)
+        // Formulaire de contact
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             document.getElementById('contact-success').style.display = 'block';
