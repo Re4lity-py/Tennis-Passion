@@ -320,89 +320,96 @@
         }
         randomQuote();
 
-        // Quiz Tennis (inchangé)
-        const quiz = [
-            {
-                q: "Combien de sets faut-il gagner pour remporter un match du Grand Chelem masculin ?",
-                a: ["2", "3", "4"],
-                c: 1
-            },
-            {
-                q: "Quelle surface est utilisée à Roland-Garros ?",
-                a: ["Gazon", "Terre battue", "Dur"],
-                c: 1
-            },
-            {
-                q: "Quel joueur détient le plus de titres du Grand Chelem ?",
-                a: ["Rafael Nadal", "Roger Federer", "Novak Djokovic"],
-                c: 2
-            },
-            {
-                q: "Quel tournoi est surnommé 'The Championships' ?",
-                a: ["US Open", "Wimbledon", "Open d'Australie"],
-                c: 1
-            },
-            {
-                q: "Combien de joueurs sur le terrain lors d'un double ?",
-                a: ["2", "3", "4"],
-                c: 2
-            },
-            {
-                q: "Comment s'appelle le coup joué juste après le service ?",
-                a: ["La volée", "Le retour", "Le smash"],
-                c: 1
-            },
-            {
-                q: "Quel est le score minimum pour gagner un tie-break ?",
-                a: ["7 points", "6 points", "10 points"],
-                c: 0
-            },
-            {
-                q: "Qui est la première joueuse à avoir remporté 23 titres du Grand Chelem en simple ?",
-                a: ["Serena Williams", "Steffi Graf", "Martina Navratilova"],
-                c: 0
-            },
-            {
-                q: "Quel est le surnom de Rafael Nadal ?",
-                a: ["Le Maître", "Le Taureau de Manacor", "Le Magicien"],
-                c: 1
-            },
-            {
-                q: "Quelle est la couleur traditionnelle des tenues à Wimbledon ?",
-                a: ["Blanc", "Vert", "Bleu"],
-                c: 0
-            }
-        ];
-        let quizIndex = 0;
-        function showQuizQuestion() {
-            const q = quiz[quizIndex];
-            document.getElementById('quiz-question').textContent = q.q;
-            const answersDiv = document.getElementById('quiz-answers');
-            answersDiv.innerHTML = '';
-            q.a.forEach((ans, i) => {
-                const btn = document.createElement('button');
-                btn.textContent = ans;
-                btn.onclick = () => {
-                    const resultDiv = document.getElementById('quiz-result');
-                    if (i === q.c) {
-                        resultDiv.textContent = "Bonne réponse !";
-                        resultDiv.style.color = "green";
-                    } else {
-                        resultDiv.textContent = `Mauvaise réponse. La bonne réponse était : "${q.a[q.c]}"`;
-                        resultDiv.style.color = "red";
-                    }
-                };
-                answersDiv.appendChild(btn);
-            });
+        // Quiz Tennis (amélioré)
+const quiz = [
+    {
+        q: "Combien de sets faut-il gagner pour remporter un match du Grand Chelem masculin ?",
+        a: ["2", "3", "4"],
+        c: 1
+    },
+    {
+        q: "Quelle surface est utilisée à Roland-Garros ?",
+        a: ["Gazon", "Terre battue", "Dur"],
+        c: 1
+    },
+    {
+        q: "Quel joueur détient le plus de titres du Grand Chelem ?",
+        a: ["Rafael Nadal", "Roger Federer", "Novak Djokovic"],
+        c: 2
+    },
+    {
+        q: "Quel tournoi est surnommé 'The Championships' ?",
+        a: ["US Open", "Wimbledon", "Open d'Australie"],
+        c: 1
+    },
+    {
+        q: "Combien de joueurs sur le terrain lors d'un double ?",
+        a: ["2", "3", "4"],
+        c: 2
+    },
+    {
+        q: "Comment s'appelle le coup joué juste après le service ?",
+        a: ["La volée", "Le retour", "Le smash"],
+        c: 1
+    },
+    {
+        q: "Quel est le score minimum pour gagner un tie-break ?",
+        a: ["7 points", "6 points", "10 points"],
+        c: 0
+    },
+    {
+        q: "Qui est la première joueuse à avoir remporté 23 titres du Grand Chelem en simple ?",
+        a: ["Serena Williams", "Steffi Graf", "Martina Navratilova"],
+        c: 0
+    },
+    {
+        q: "Quel est le surnom de Rafael Nadal ?",
+        a: ["Le Maître", "Le Taureau de Manacor", "Le Magicien"],
+        c: 1
+    },
+    {
+        q: "Quelle est la couleur traditionnelle des tenues à Wimbledon ?",
+        a: ["Blanc", "Vert", "Bleu"],
+        c: 0
+    }
+];
+let quizIndex = 0;
+let quizAnswered = false;
+
+function showQuizQuestion() {
+    const q = quiz[quizIndex];
+    document.getElementById('quiz-question').textContent = q.q;
+    const answersDiv = document.getElementById('quiz-answers');
+    answersDiv.innerHTML = '';
+    quizAnswered = false;
+    q.a.forEach((ans, i) => {
+        const btn = document.createElement('button');
+        btn.textContent = ans;
+        btn.onclick = () => {
+            if (quizAnswered) return;
             const resultDiv = document.getElementById('quiz-result');
-            resultDiv.textContent = '';
-            resultDiv.style.color = "";
-        }
-        function nextQuizQuestion() {
-            quizIndex = (quizIndex + 1) % quiz.length;
-            showQuizQuestion();
-        }
-        showQuizQuestion();
+            if (i === q.c) {
+                resultDiv.textContent = "Bonne réponse !";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = `Mauvaise réponse. La bonne réponse était : "${q.a[q.c]}"`;
+                resultDiv.style.color = "red";
+            }
+            // Désactiver tous les boutons après une réponse
+            Array.from(answersDiv.children).forEach(b => b.disabled = true);
+            quizAnswered = true;
+        };
+        answersDiv.appendChild(btn);
+    });
+    const resultDiv = document.getElementById('quiz-result');
+    resultDiv.textContent = '';
+    resultDiv.style.color = "";
+}
+function nextQuizQuestion() {
+    quizIndex = (quizIndex + 1) % quiz.length;
+    showQuizQuestion();
+}
+showQuizQuestion();
 
         // Formulaire de contact (démo, sans envoi)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
