@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tennis Passion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <style>
         body { max-width: 1100px; margin: auto; font-family: Arial, sans-serif; background: #fff; color: #111; transition: background 0.4s, color 0.4s; }
@@ -87,7 +88,7 @@
         </section>
         <section id="histoire">
             <h2>Histoire du tennis</h2>
-            <p>Le tennis moderne trouve ses origines au XIX<sup>e</sup> siècle en Angleterre. Il s’est inspiré du jeu de paume, pratiqué en France dès le Moyen Âge. Aujourd’hui, le tennis est un sport professionnel mondialement suivi.</p>
+            <p>Le tennis moderne trouve ses origines au XIX<sup>e</sup> siècle en Angleterre. Il s’est inspiré du jeu de paume, pratiqué en France dès le Moyen Âge. Aujourd’hui, le tennis[...]</p>
         </section>
         <section id="regles">
             <h2>Règles du jeu</h2>
@@ -170,7 +171,8 @@
             <div id="quiz-question"></div>
             <div id="quiz-answers"></div>
             <div id="quiz-result"></div>
-            <button onclick="nextQuizQuestion()">Question suivante</button>
+            <button id="next-question-btn" onclick="nextQuizQuestion()">Question suivante</button>
+            <button id="restart-quiz-btn" style="display:none;" onclick="restartQuiz()">Recommencer le quiz</button>
         </section>
         <section id="players">
             <h2>Joueurs célèbres</h2>
@@ -186,12 +188,12 @@
         <section id="gallery">
             <h2>Galerie</h2>
             <div style="display:flex;gap:15px;flex-wrap:wrap;">
-                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
-                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
-                <img src="https://st4.depositphotos.com/1587911/24763/i/450/depositphotos_247635014-stock-photo-melbourne-australia-january-2019-rod.jpg" alt="Open d'Australie" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
-                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
-                <img src="https://img.20mn.fr/6ZQZiAlfTuqZDIh6b8EAVik/1444x920_paris-le-31-mai-2012-illustration-cours-de-tennis-durant-les-internationaux-de-france-de-roland-garros-foule-public-cours-central-philippe-chatrier-arbitre" alt="Arbitre tennis" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
-                <img src="https://www.mon-terrain-2-sports.fr/wp-content/uploads/2024/09/pexels-pixelcop-1619860-1.jpg" alt="Terrain de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:7px;border:1px solid #ccc;">
+                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
+                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
+                <img src="https://st4.depositphotos.com/1587911/24763/i/450/depositphotos_247635014-stock-photo-melbourne-australia-january-2019-rod.jpg" alt="Open d'Australie" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
+                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
+                <img src="https://img.20mn.fr/6ZQZiAlfTuqZDIh6b8EAVik/1444x920_paris-le-31-mai-2012-illustration-cours-de-tennis-durant-les-internationaux-de-france-de-roland-garros-foule-public.jpg" alt="Public Roland-Garros" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
+                <img src="https://www.mon-terrain-2-sports.fr/wp-content/uploads/2024/09/pexels-pixelcop-1619860-1.jpg" alt="Terrain de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
             </div>
         </section>
         <section id="utils">
@@ -320,98 +322,129 @@
         }
         randomQuote();
 
-        // Quiz Tennis (amélioré)
-const quiz = [
-    {
-        q: "Combien de sets faut-il gagner pour remporter un match du Grand Chelem masculin ?",
-        a: ["2", "3", "4"],
-        c: 1
-    },
-    {
-        q: "Quelle surface est utilisée à Roland-Garros ?",
-        a: ["Gazon", "Terre battue", "Dur"],
-        c: 1
-    },
-    {
-        q: "Quel joueur détient le plus de titres du Grand Chelem ?",
-        a: ["Rafael Nadal", "Roger Federer", "Novak Djokovic"],
-        c: 2
-    },
-    {
-        q: "Quel tournoi est surnommé 'The Championships' ?",
-        a: ["US Open", "Wimbledon", "Open d'Australie"],
-        c: 1
-    },
-    {
-        q: "Combien de joueurs sur le terrain lors d'un double ?",
-        a: ["2", "3", "4"],
-        c: 2
-    },
-    {
-        q: "Comment s'appelle le coup joué juste après le service ?",
-        a: ["La volée", "Le retour", "Le smash"],
-        c: 1
-    },
-    {
-        q: "Quel est le score minimum pour gagner un tie-break ?",
-        a: ["7 points", "6 points", "10 points"],
-        c: 0
-    },
-    {
-        q: "Qui est la première joueuse à avoir remporté 23 titres du Grand Chelem en simple ?",
-        a: ["Serena Williams", "Steffi Graf", "Martina Navratilova"],
-        c: 0
-    },
-    {
-        q: "Quel est le surnom de Rafael Nadal ?",
-        a: ["Le Maître", "Le Taureau de Manacor", "Le Magicien"],
-        c: 1
-    },
-    {
-        q: "Quelle est la couleur traditionnelle des tenues à Wimbledon ?",
-        a: ["Blanc", "Vert", "Bleu"],
-        c: 0
-    }
-];
-let quizIndex = 0;
-let quizAnswered = false;
-
-function showQuizQuestion() {
-    const q = quiz[quizIndex];
-    document.getElementById('quiz-question').textContent = q.q;
-    const answersDiv = document.getElementById('quiz-answers');
-    answersDiv.innerHTML = '';
-    quizAnswered = false;
-    q.a.forEach((ans, i) => {
-        const btn = document.createElement('button');
-        btn.textContent = ans;
-        btn.onclick = () => {
-            if (quizAnswered) return;
-            const resultDiv = document.getElementById('quiz-result');
-            if (i === q.c) {
-                resultDiv.textContent = "Bonne réponse !";
-                resultDiv.style.color = "green";
-            } else {
-                resultDiv.textContent = `Mauvaise réponse. La bonne réponse était : "${q.a[q.c]}"`;
-                resultDiv.style.color = "red";
+        // Quiz Tennis (affichage résultat à la fin)
+        const quiz = [
+            {
+                q: "Combien de sets faut-il gagner pour remporter un match du Grand Chelem masculin ?",
+                a: ["2", "3", "4"],
+                c: 1
+            },
+            {
+                q: "Quelle surface est utilisée à Roland-Garros ?",
+                a: ["Gazon", "Terre battue", "Dur"],
+                c: 1
+            },
+            {
+                q: "Quel joueur détient le plus de titres du Grand Chelem ?",
+                a: ["Rafael Nadal", "Roger Federer", "Novak Djokovic"],
+                c: 2
+            },
+            {
+                q: "Quel tournoi est surnommé 'The Championships' ?",
+                a: ["US Open", "Wimbledon", "Open d'Australie"],
+                c: 1
+            },
+            {
+                q: "Combien de joueurs sur le terrain lors d'un double ?",
+                a: ["2", "3", "4"],
+                c: 2
+            },
+            {
+                q: "Comment s'appelle le coup joué juste après le service ?",
+                a: ["La volée", "Le retour", "Le smash"],
+                c: 1
+            },
+            {
+                q: "Quel est le score minimum pour gagner un tie-break ?",
+                a: ["7 points", "6 points", "10 points"],
+                c: 0
+            },
+            {
+                q: "Qui est la première joueuse à avoir remporté 23 titres du Grand Chelem en simple ?",
+                a: ["Serena Williams", "Steffi Graf", "Martina Navratilova"],
+                c: 0
+            },
+            {
+                q: "Quel est le surnom de Rafael Nadal ?",
+                a: ["Le Maître", "Le Taureau de Manacor", "Le Magicien"],
+                c: 1
+            },
+            {
+                q: "Quelle est la couleur traditionnelle des tenues à Wimbledon ?",
+                a: ["Blanc", "Vert", "Bleu"],
+                c: 0
             }
-            // Désactiver tous les boutons après une réponse
-            Array.from(answersDiv.children).forEach(b => b.disabled = true);
-            quizAnswered = true;
-        };
-        answersDiv.appendChild(btn);
-    });
-    const resultDiv = document.getElementById('quiz-result');
-    resultDiv.textContent = '';
-    resultDiv.style.color = "";
-}
-function nextQuizQuestion() {
-    quizIndex = (quizIndex + 1) % quiz.length;
-    showQuizQuestion();
-}
-showQuizQuestion();
+        ];
+        let quizIndex = 0;
+        let quizAnswered = false;
+        let score = 0;
+        const totalQuestions = quiz.length;
 
-        // Formulaire de contact (démo, sans envoi)
+        function showQuizQuestion() {
+            // Si toutes les questions ont été posées, affiche le résultat final
+            if (quizIndex >= totalQuestions) {
+                document.getElementById('quiz-question').textContent = '';
+                document.getElementById('quiz-answers').innerHTML = '';
+                document.getElementById('quiz-result').textContent =
+                    `Quiz terminé ! Vous avez ${score} bonne${score>1?'s':''} réponse${score>1?'s':''} sur ${totalQuestions}.`;
+                document.getElementById('quiz-result').style.color = "blue";
+                document.getElementById('next-question-btn').style.display = "none";
+                document.getElementById('restart-quiz-btn').style.display = "inline-block";
+                return;
+            }
+
+            // Affiche la question suivante
+            const q = quiz[quizIndex];
+            document.getElementById('quiz-question').textContent = q.q;
+            const answersDiv = document.getElementById('quiz-answers');
+            answersDiv.innerHTML = '';
+            quizAnswered = false;
+
+            q.a.forEach((ans, i) => {
+                const btn = document.createElement('button');
+                btn.textContent = ans;
+                btn.onclick = () => {
+                    if (quizAnswered) return;
+                    const resultDiv = document.getElementById('quiz-result');
+                    if (i === q.c) {
+                        resultDiv.textContent = "Bonne réponse !";
+                        resultDiv.style.color = "green";
+                        score++;
+                    } else {
+                        resultDiv.textContent = `Mauvaise réponse. La bonne réponse était : "${q.a[q.c]}"`;
+                        resultDiv.style.color = "red";
+                    }
+                    // Désactive tous les boutons après la réponse
+                    Array.from(answersDiv.children).forEach(b => b.disabled = true);
+                    quizAnswered = true;
+                };
+                answersDiv.appendChild(btn);
+            });
+
+            // Réinitialise le message de résultat à chaque nouvelle question
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.textContent = '';
+            resultDiv.style.color = "";
+            document.getElementById('next-question-btn').style.display = "inline-block";
+            document.getElementById('restart-quiz-btn').style.display = "none";
+        }
+
+        function nextQuizQuestion() {
+            if (!quizAnswered) return; // On ne passe à la suivante que si répondu !
+            quizIndex++;
+            showQuizQuestion();
+        }
+
+        function restartQuiz() {
+            quizIndex = 0;
+            score = 0;
+            showQuizQuestion();
+        }
+
+        // Au chargement, affiche la première question
+        showQuizQuestion();
+
+        // Formulaire de contact (démo, sans envoi serveur)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             document.getElementById('contact-success').style.display = 'block';
