@@ -18,9 +18,28 @@
         .nadal-galerie img { max-width: 190px; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
         .retour-haut { display: block; text-align: center; margin: 32px 0 0 0; }
         @media (max-width:700px) { .profil-nadal { flex-direction: column; } }
+        /* Agrandissement d'image */
+        #zoom-overlay {
+          display: none;
+          position: fixed;
+          z-index: 9999;
+          left: 0; top: 0; width: 100vw; height: 100vh;
+          background: rgba(0,0,0,0.8);
+          justify-content: center;
+          align-items: center;
+        }
+        #zoom-overlay img {
+          max-width: 90vw;
+          max-height: 90vh;
+          box-shadow: 0 0 20px #fff;
+          border-radius: 10px;
+          background: #fff;
+        }
     </style>
 </head>
 <body>
+
+    <button id="theme-btn" class="sombre-toggle-btn" aria-label="Changer le mode d'affichage" style="position:fixed;top:12px;right:12px;z-index:1000;">🌙 Mode sombre</button>
 
     <header>
         <h1>Tennis Passion 🎾</h1>
@@ -50,7 +69,7 @@
             <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRQQYQCdG82wD08Ku67aV_bEvWCXME07Hc3EAYbl6HFeMUr6EOJP7db4SUIEcywajRAHGnXhh6Xc396PXbTupwpyg" alt="Novak Djokovic 2023">
             <div>
                 <p>
-                    Novak Djokovic, né le 22 mai 1987 à Belgrade (Serbie), est considéré comme l’un des plus grands joueurs de l’histoire du tennis. Polyvalent, déterminé et stratège hors pair, il a réussi l’exploit de remporter tous les Grands Chelems plusieurs fois. Leader du tennis moderne, il a marqué son époque par sa constance, sa rigueur mentale et sa soif de victoire.
+                    Novak Djokovic, né le 22 mai 1987 à Belgrade (Serbie), est considéré comme l’un des plus grands joueurs de l’histoire du tennis. Polyvalent, déterminé et stratège hors pair, il détient de nombreux records majeurs.
                 </p>
                 <ul>
                     <li><strong>Nationalité :</strong> Serbe 🇷🇸</li>
@@ -106,7 +125,7 @@
         <section>
             <h3>Personnalité, valeurs et engagements</h3>
             <p>
-                Djokovic est connu pour sa discipline, sa rigueur physique et mentale, et son ouverture spirituelle. Il est impliqué dans des projets d’éducation à travers la <a href="https://novakdjokovicfoundation.org/" target="_blank">Fondation Novak Djokovic</a>, qui favorise le développement des enfants défavorisés.
+                Djokovic est connu pour sa discipline, sa rigueur physique et mentale, et son ouverture spirituelle. Il est impliqué dans des projets d’éducation à travers la <a href="https://www.novakdjokovicfoundation.org/" target="_blank">Novak Djokovic Foundation</a>.
             </p>
             <p>
                 En dehors du tennis, Novak pratique le yoga, la méditation et suit un régime strictement végétalien.
@@ -128,8 +147,8 @@
             <h3>Galerie photos</h3>
             <div class="nadal-galerie">
                 <img src="https://www.welovetennis.fr/wp-content/uploads/2023/07/Djokovic-defense-grand-ecart-wim-2023.jpeg" alt="Djokovic Wimbledon 2023">
-                <img src="https://img.20mn.fr/m3EtS3EHR0-ROFl9e4dD0Ck/1444x920_january-25-2023-4th-seed-novak-djokovic-of-serbia-in-action-against-5th-seed-andrey-rublev-of-the-russian-federation-on-rod-laver-arena-in-a-men-s-singles-quarterfinals-match-on-day-10-of-the-2023-australian-open-in-melbourne-australia-sydney-low-cal-sport-media-sipa-usa-credit-image-sydney-low-cal-sport-media-sipa-usa-44052843-zeus-2301251150" alt="Djokovic Open d'Australie">
-                <img src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.eurosport.com/2021/06/13/3152742-64610568-2560-1440.jpg" alt="Djokovic Roland-Garros 2023">
+                <img src="https://img.20mn.fr/m3EtS3EHR0-ROFl9e4dD0Ck/1444x920_january-25-2023-4th-seed-novak-djokovic-of-serbia-in-action-against-5th-seed-andrey-rublev-of-the-russian-federation.jpg" alt="Djokovic Open Australie">
+                <img src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.eurosport.com/2021/06/13/3152742-64610568-2560-1440.jpg" alt="Djokovic Roland-Garros">
                 <img src="https://images.lanouvellerepublique.fr/image/upload/66cb4182cdb77376368b457e" alt="Djokovic US Open 2023">
             </div>
         </section>
@@ -144,7 +163,13 @@
         &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.01
     </footer>
 
+    <!-- Overlay pour l'image agrandie -->
+    <div id="zoom-overlay" onclick="this.style.display='none'">
+      <img src="" alt="Aperçu" />
+    </div>
+
     <script>
+        // Mode sombre/clair
         const themeBtn = document.getElementById('theme-btn');
         let dark = false;
         if (sessionStorage.getItem('tennis-glossaire-dark') === '1') {
@@ -158,7 +183,15 @@
             themeBtn.textContent = dark ? "☀️ Mode clair" : "🌙 Mode sombre";
             sessionStorage.setItem('tennis-glossaire-dark', dark ? '1' : '0');
         };
+
+        // Agrandissement d'image (ajouté)
+        document.querySelectorAll('img').forEach(function(img) {
+          img.style.cursor = 'zoom-in';
+          img.onclick = function(e) {
+            document.querySelector('#zoom-overlay img').src = this.src;
+            document.getElementById('zoom-overlay').style.display = 'flex';
+          };
+        });
     </script>
 </body>
 </html>
-
