@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rafael Nadal - Tennis Passion</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main { margin-top: 40px; }
+        h2 { margin-top: 32px; }
+        .profil-nadal { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+        .profil-nadal img { max-width: 220px; border-radius: 10px; box-shadow: 0 2px 8px #0001; }
+        .nadal-stats, .nadal-table { margin: 2em 0; }
+        .nadal-table table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+        .nadal-table th, .nadal-table td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+        .nadal-table th { background: #e8f8ec; color: #007b43; }
+        .nadal-citation { font-style: italic; color: #007b43; margin: 1.5em 0 1em 0; border-left: 4px solid #007b43; padding-left: 1em; }
+        .nadal-galerie { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 1.5em 0; }
+        .nadal-galerie img { max-width: 190px; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+        .retour-haut { display: block; text-align: center; margin: 32px 0 0 0; }
+        @media (max-width:700px) { .profil-nadal { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <div style="text-align:center; margin: 24px 0 0 0;">
+        <button onclick="window.location.href='index.html';" style="padding:10px 22px; font-size:1.1em; border-radius:6px; border:1px solid #bbb; background:#eee; cursor:pointer;">
+            ⬅️ Retour à la page principale
+        </button>
+    </div>
 
+    <header>
+        <h1>Tennis Passion 🎾</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#presentation">Présentation</a></li>
+                <li><a href="index.html#histoire">Histoire</a></li>
+                <li><a href="index.html#regles">Règles</a></li>
+                <li><a href="index.html#tournois">Tournois majeurs</a></li>
+                <li><a href="index.html#news">Actualités</a></li>
+                <li><a href="index.html#classement">Classement</a></li>
+                <li><a href="index.html#players">Joueurs célèbres</a></li>
+                <li><a href="index.html#gallery">Galerie</a></li>
+                <li><a href="index.html#citation">Citation</a></li>
+                <li><a href="index.html#quiz">Quiz</a></li>
+                <li><a href="glossaire.html">Glossaire</a></li>
+                <li><a href="index.html#utils">Outils</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="top">Rafael Nadal - Le Roi de la Terre Battue</h2>
+        <section class="profil-nadal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Rafael_Nadal_2018.jpg" alt="Rafael Nadal 2018">
+            <div>
+                <p>
+                    Rafael Nadal Parera, né le 3 juin 1986 à Manacor (Espagne), est l’un des plus grands champions de l’histoire du tennis. Surnommé le « Roi de la Terre Battue », il détient le record du nombre de titres à Roland-Garros. Combattif, humble et très apprécié du public, il a marqué son époque par sa régularité, sa force mentale et son engagement exemplaire sur et hors du court.
+                </p>
+                <ul>
+                    <li><strong>Nationalité :</strong> Espagnole 🇪🇸</li>
+                    <li><strong>Naissance :</strong> 3 juin 1986, Manacor (Îles Baléares)</li>
+                    <li><strong>Taille :</strong> 1,85 m</li>
+                    <li><strong>Jeu :</strong> Gaucher, revers à deux mains</li>
+                    <li><strong>Surnom :</strong> Rafa, « El Toro », « Roi de la Terre Battue »</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="nadal-citation">
+            « Le plus important n’est pas de gagner, mais de ne jamais abandonner. »
+            <br><span style="font-size:0.9em;color:#777;">— Rafael Nadal</span>
+        </section>
+
+        <section class="nadal-stats">
+            <h3>Statistiques Clés</h3>
+            <ul>
+                <li><strong>Titres ATP :</strong> 92</li>
+                <li><strong>Titres du Grand Chelem :</strong> 22</li>
+                <li><strong>Roland-Garros :</strong> 14 (record absolu)</li>
+                <li><strong>Masters 1000 :</strong> 36</li>
+                <li><strong>Semaines n°1 mondial :</strong> 209</li>
+                <li><strong>Pourcentage de victoires en carrière :</strong> 82,9 %</li>
+                <li><strong>Médaille d’or Olympique Simple :</strong> 2008</li>
+                <li><strong>Médaille d’or Olympique Double :</strong> 2016</li>
+                <li><strong>Coupe Davis :</strong> 5</li>
+            </ul>
+        </section>
+
+        <section class="nadal-table">
+            <h3>Palmarès en Grand Chelem</h3>
+            <table>
+                <tr><th>Tournoi</th><th>Victoires</th><th>Années</th></tr>
+                <tr><td>Australian Open</td><td>2</td><td>2009, 2022</td></tr>
+                <tr><td>Roland-Garros</td><td>14</td><td>2005-2008, 2010-2014, 2017-2020, 2022</td></tr>
+                <tr><td>Wimbledon</td><td>2</td><td>2008, 2010</td></tr>
+                <tr><td>US Open</td><td>4</td><td>2010, 2013, 2017, 2019</td></tr>
+            </table>
+        </section>
+
+        <section>
+            <h3>Moments marquants et records</h3>
+            <ul>
+                <li>Recordman de Roland-Garros avec 14 victoires, aucun autre joueur n’a gagné autant un même Grand Chelem.</li>
+                <li>Seul joueur avec au moins 2 titres dans chaque Grand Chelem (avec Djokovic).</li>
+                <li>81 victoires consécutives sur terre battue (record ATP).</li>
+                <li>Plus de 105 matchs gagnés à Roland-Garros.</li>
+                <li>Rivalités légendaires avec Roger Federer et Novak Djokovic.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Personnalité, valeurs et engagements</h3>
+            <p>
+                Nadal est reconnu pour sa combativité, son humilité et son respect des adversaires. Il est très impliqué dans l’aide à la jeunesse à travers la <a href="https://www.fundacionrafaelnadal.org/en" target="_blank">Fondation Rafa Nadal</a> qui œuvre pour l’éducation et l’intégration sociale par le sport. 
+            </p>
+            <p>
+                En dehors du tennis, Rafael est passionné de golf et de football, fidèle à ses racines à Majorque.
+            </p>
+        </section>
+
+        <section>
+            <h3>Quelques anecdotes</h3>
+            <ul>
+                <li>Son oncle Toni Nadal a été son coach principal jusqu’en 2017.</li>
+                <li>Il a remporté Roland-Garros lors de sa première participation (2005).</li>
+                <li>Il joue avec la montre de luxe Richard Mille, conçue spécialement pour lui.</li>
+                <li>Nadal n’a jamais cassé une raquette sur le court !</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Galerie photos</h3>
+            <div class="nadal-galerie">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Nadal_RG18_1_%2842912951062%29.jpg" alt="Nadal à Roland Garros">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Nadal_AO18_%2840094996355%29.jpg" alt="Nadal à l'Australian Open">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/NadalWim13_1_%289271942162%29.jpg" alt="Nadal à Wimbledon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Tennis_serve.jpg" alt="Service de Nadal">
+            </div>
+        </section>
+
+        <div class="retour-haut">
+            <button onclick="window.location.href='index.html';">⬅️ Retour à la page principale</button>
+            <button onclick="window.scrollTo({top:0,behavior:'smooth'})" style="margin-left: 14px;">⬆️ Haut de page</button>
+        </div>
+    </main>
+    <footer>
+        &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.01
+    </footer>
+    <script>
+        // Mode sombre/clair
+        const themeBtn = document.getElementById('theme-btn');
+        let dark = false;
+        if (sessionStorage.getItem('tennis-glossaire-dark') === '1') {
+            document.body.classList.add('dark-theme');
+            themeBtn.textContent = "☀️ Mode clair";
+            dark = true;
+        }
+        themeBtn.onclick = () => {
+            dark = !dark;
+            document.body.classList.toggle('dark-theme', dark);
+            themeBtn.textContent = dark ? "☀️ Mode clair" : "🌙 Mode sombre";
+            sessionStorage.setItem('tennis-glossaire-dark', dark ? '1' : '0');
+        };
+    </script>
+</body>
+</html>
