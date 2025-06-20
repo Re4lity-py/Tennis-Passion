@@ -18,9 +18,28 @@
         .nadal-galerie img { max-width: 190px; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
         .retour-haut { display: block; text-align: center; margin: 32px 0 0 0; }
         @media (max-width:700px) { .profil-nadal { flex-direction: column; } }
+        /* Agrandissement d'image */
+        #zoom-overlay {
+          display: none;
+          position: fixed;
+          z-index: 9999;
+          left: 0; top: 0; width: 100vw; height: 100vh;
+          background: rgba(0,0,0,0.8);
+          justify-content: center;
+          align-items: center;
+        }
+        #zoom-overlay img {
+          max-width: 90vw;
+          max-height: 90vh;
+          box-shadow: 0 0 20px #fff;
+          border-radius: 10px;
+          background: #fff;
+        }
     </style>
 </head>
 <body>
+
+    <button id="theme-btn" class="sombre-toggle-btn" aria-label="Changer le mode d'affichage" style="position:fixed;top:12px;right:12px;z-index:1000;">🌙 Mode sombre</button>
 
     <header>
         <h1>Tennis Passion 🎾</h1>
@@ -47,10 +66,10 @@
     <main>
         <h2 id="top">Rafael Nadal - Le Roi de la Terre Battue</h2>
         <section class="profil-nadal">
-            <img src="https://media.ouest-france.fr/v1/pictures/MjAyMDEwZjE0YjFiMjExNTY0MmYzODc5MDY3ZmZkY2IzN2Y3Njk?width=1260&height=708&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=46f21ad76c3a4cdb04a2da516b04b4d1208b1dd101457d5b07f04f35a2e45675" alt="Rafael Nadal 2018">
+            <img src="https://media.ouest-france.fr/v1/pictures/MjAyMDEwZjE0YjFiMjExNTY0MmYzODc5MDY3ZmZkY2IzN2Y3Njk?width=1260&height=708&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=1d0b2d0aaf9e6d7f1ff7b0a03eaf06b6008f23f4fbe3c0e3f5bc8d2b97e1c121" alt="Rafael Nadal">
             <div>
                 <p>
-                    Rafael Nadal Parera, né le 3 juin 1986 à Manacor (Espagne), est l’un des plus grands champions de l’histoire du tennis. Surnommé le « Roi de la Terre Battue », il détient le record du nombre de titres à Roland-Garros. Combattif, humble et très apprécié du public, il a marqué son époque par sa régularité, sa force mentale et son engagement exemplaire sur et hors du court.
+                    Rafael Nadal Parera, né le 3 juin 1986 à Manacor (Espagne), est l’un des plus grands champions de l’histoire du tennis. Surnommé le « Roi de la Terre Battue », il détient de nombreux records et est apprécié pour sa combativité et son humilité.
                 </p>
                 <ul>
                     <li><strong>Nationalité :</strong> Espagnole 🇪🇸</li>
@@ -107,7 +126,7 @@
         <section>
             <h3>Personnalité, valeurs et engagements</h3>
             <p>
-                Nadal est reconnu pour sa combativité, son humilité et son respect des adversaires. Il est très impliqué dans l’aide à la jeunesse à travers la <a href="https://www.fundacionrafaelnadal.org/en" target="_blank">Fondation Rafa Nadal</a> qui œuvre pour l’éducation et l’intégration sociale par le sport. 
+                Nadal est reconnu pour sa combativité, son humilité et son respect des adversaires. Il est très impliqué dans l’aide à la jeunesse à travers la <a href="https://www.fundacionrafanadal.org/fr" target="_blank">Fondation Rafa Nadal</a>.
             </p>
             <p>
                 En dehors du tennis, Rafael est passionné de golf et de football, fidèle à ses racines à Majorque.
@@ -129,8 +148,8 @@
             <h3>Galerie photos</h3>
             <div class="nadal-galerie">
                 <img src="https://cloudfront-eu-central-1.images.arcpublishing.com/leparisien/42MVQCTITRGVTBNZPK37K4BC3A.jpg" alt="Nadal à Roland Garros">
-                <img src="https://www.lequipe.fr/_medias/img-photo-jpg/mercredi-rafael-s-est-qualifie-sans-souci-pour-le-troisieme-tour-de-l-open-d-australie-loren-elliott/1500000001594621/0:0,1997:1331-828-552-75/a96e2.jpg" alt="Nadal à l'Australian Open">
-                <img src="https://i.guim.co.uk/img/media/cfad9ee9f751f123f3118d4ee8057c237e344f0f/27_127_3759_2255/master/3759.jpg?width=700&quality=85&auto=format&fit=max&s=11dfe8c55e0b50abe9f918dc6525fcce" alt="Nadal à Wimbledon">
+                <img src="https://www.lequipe.fr/_medias/img-photo-jpg/mercredi-rafael-s-est-qualifie-sans-souci-pour-le-troisieme-tour-de-l-open-d-australie-loren-elliott/1500000001594621/0:0,1942:1295-1200-800-75/9a2b8.jpg" alt="Nadal Open Australie">
+                <img src="https://i.guim.co.uk/img/media/cfad9ee9f751f123f3118d4ee8057c237e344f0f/27_127_3759_2255/master/3759.jpg?width=700&quality=85&auto=format&fit=max&s=11dfe8c55e0b50abe9f91d653d93d3ae" alt="Nadal trophée">
                 <img src="https://www.welovetennis.fr/wp-content/uploads/2020/10/Nadal-service-RG-2020.jpeg" alt="Service de Nadal">
             </div>
         </section>
@@ -143,6 +162,12 @@
     <footer>
         &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.01
     </footer>
+
+    <!-- Overlay pour l'image agrandie -->
+    <div id="zoom-overlay" onclick="this.style.display='none'">
+      <img src="" alt="Aperçu" />
+    </div>
+
     <script>
         // Mode sombre/clair
         const themeBtn = document.getElementById('theme-btn');
@@ -158,6 +183,15 @@
             themeBtn.textContent = dark ? "☀️ Mode clair" : "🌙 Mode sombre";
             sessionStorage.setItem('tennis-glossaire-dark', dark ? '1' : '0');
         };
+
+        // Agrandissement d'image (ajouté)
+        document.querySelectorAll('img').forEach(function(img) {
+          img.style.cursor = 'zoom-in';
+          img.onclick = function(e) {
+            document.querySelector('#zoom-overlay img').src = this.src;
+            document.getElementById('zoom-overlay').style.display = 'flex';
+          };
+        });
     </script>
 </body>
 </html>
