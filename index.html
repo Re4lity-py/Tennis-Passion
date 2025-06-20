@@ -56,6 +56,23 @@
         section { margin-bottom: 36px; }
         footer { text-align: center; padding: 1.2em 0 0.7em 0; color: #555; font-size: 0.98em; }
         body.dark-theme footer { color: #aaa; }
+        /* Agrandissement d'image */
+        #zoom-overlay {
+          display: none;
+          position: fixed;
+          z-index: 9999;
+          left: 0; top: 0; width: 100vw; height: 100vh;
+          background: rgba(0,0,0,0.8);
+          justify-content: center;
+          align-items: center;
+        }
+        #zoom-overlay img {
+          max-width: 90vw;
+          max-height: 90vh;
+          box-shadow: 0 0 20px #fff;
+          border-radius: 10px;
+          background: #fff;
+        }
     </style>
 </head>
 <body>
@@ -88,7 +105,7 @@
         </section>
         <section id="histoire">
             <h2>Histoire du tennis</h2>
-            <p>Le tennis moderne trouve ses origines au XIX<sup>e</sup> siècle en Angleterre. Il s’est inspiré du jeu de paume, pratiqué en France dès le Moyen Âge. Aujourd’hui, le tennis[...]</p>
+            <p>Le tennis moderne trouve ses origines au XIX<sup>e</sup> siècle en Angleterre. Il s’est inspiré du jeu de paume, pratiqué en France dès le Moyen Âge. Aujourd’hui, le tennis est un sport universel avec des stars et des tournois majeurs sur tous les continents.</p>
         </section>
         <section id="regles">
             <h2>Règles du jeu</h2>
@@ -120,7 +137,7 @@
                 </p>
             </article>
             <article>
-                <h3>Loïs Boisson, star montante du tennis frnaçais</h3>
+                <h3>Loïs Boisson, star montante du tennis français</h3>
                 <p>
                     <a href="https://www.primevideo.com/-/fr/detail/Loïs-Boisson-Résilience/0JWRC366CVQ1TMPFS7PQN0OD9T" target="_blank" rel="noopener">
                         Découvrez le documentaire exclusif à Prime Vidéo sur elle.
@@ -221,12 +238,12 @@
         <section id="gallery">
             <h2>Galerie</h2>
             <div style="display:flex;gap:15px;flex-wrap:wrap;">
-                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
-                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
-                <img src="https://st4.depositphotos.com/1587911/24763/i/450/depositphotos_247635014-stock-photo-melbourne-australia-january-2019-rod.jpg" alt="Open d'Australie" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
-                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
-                <img src="https://img.20mn.fr/6ZQZiAlfTuqZDIh6b8EAVik/1444x920_paris-le-31-mai-2012-illustration-cours-de-tennis-durant-les-internationaux-de-france-de-roland-garros-foule-public.jpg" alt="Public Roland-Garros" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
-                <img src="https://www.mon-terrain-2-sports.fr/wp-content/uploads/2024/09/pexels-pixelcop-1619860-1.jpg" alt="Terrain de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:10px;">
+                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,0.15);">
+                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle" style="width:220px;height:140px;object-fit:cover;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,0.15);">
+                <img src="https://st4.depositphotos.com/1587911/24763/i/450/depositphotos_247635014-stock-photo-melbourne-australia-january-2019-rod.jpg" alt="Open d'Australie" style="width:220px;height:140px;object-fit:cover;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,0.15);">
+                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match" style="width:220px;height:140px;object-fit:cover;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,0.15);">
+                <img src="https://img.20mn.fr/6ZQZiAlfTuqZDIh6b8EAVik/1444x920_paris-le-31-mai-2012-illustration-cours-de-tennis-durant-les-internationaux-de-france-de-roland-garros-foule-public.jpg" alt="Roland Garros public" style="width:220px;height:140px;object-fit:cover;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,0.15);">
+                <img src="https://www.mon-terrain-2-sports.fr/wp-content/uploads/2024/09/pexels-pixelcop-1619860-1.jpg" alt="Terrain de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,0.15);">
             </div>
         </section>
         <section id="utils">
@@ -311,6 +328,12 @@
     <footer>
         &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.05
     </footer>
+
+    <!-- Overlay pour l'image agrandie -->
+    <div id="zoom-overlay" onclick="this.style.display='none'">
+      <img src="" alt="Aperçu" />
+    </div>
+
     <script>
         // Mode sombre/clair synchronisé avec le glossaire
         const themeBtn = document.getElementById('theme-btn');
@@ -414,7 +437,6 @@
         const totalQuestions = quiz.length;
 
         function showQuizQuestion() {
-            // Si toutes les questions ont été posées, affiche le résultat final
             if (quizIndex >= totalQuestions) {
                 document.getElementById('quiz-question').textContent = '';
                 document.getElementById('quiz-answers').innerHTML = '';
@@ -425,14 +447,11 @@
                 document.getElementById('restart-quiz-btn').style.display = "inline-block";
                 return;
             }
-
-            // Affiche la question suivante
             const q = quiz[quizIndex];
             document.getElementById('quiz-question').textContent = q.q;
             const answersDiv = document.getElementById('quiz-answers');
             answersDiv.innerHTML = '';
             quizAnswered = false;
-
             q.a.forEach((ans, i) => {
                 const btn = document.createElement('button');
                 btn.textContent = ans;
@@ -447,14 +466,11 @@
                         resultDiv.textContent = `Mauvaise réponse. La bonne réponse était : "${q.a[q.c]}"`;
                         resultDiv.style.color = "red";
                     }
-                    // Désactive tous les boutons après la réponse
                     Array.from(answersDiv.children).forEach(b => b.disabled = true);
                     quizAnswered = true;
                 };
                 answersDiv.appendChild(btn);
             });
-
-            // Réinitialise le message de résultat à chaque nouvelle question
             const resultDiv = document.getElementById('quiz-result');
             resultDiv.textContent = '';
             resultDiv.style.color = "";
@@ -463,7 +479,7 @@
         }
 
         function nextQuizQuestion() {
-            if (!quizAnswered) return; // On ne passe à la suivante que si répondu !
+            if (!quizAnswered) return;
             quizIndex++;
             showQuizQuestion();
         }
@@ -474,7 +490,6 @@
             showQuizQuestion();
         }
 
-        // Au chargement, affiche la première question
         showQuizQuestion();
 
         // Formulaire de contact (démo, sans envoi serveur)
@@ -483,6 +498,15 @@
             document.getElementById('contact-success').style.display = 'block';
             document.getElementById('contact-error').style.display = 'none';
             document.getElementById('contactForm').reset();
+        });
+
+        // Agrandissement d'image (ajouté)
+        document.querySelectorAll('img').forEach(function(img) {
+          img.style.cursor = 'zoom-in';
+          img.onclick = function(e) {
+            document.querySelector('#zoom-overlay img').src = this.src;
+            document.getElementById('zoom-overlay').style.display = 'flex';
+          };
         });
     </script>
 </body>
