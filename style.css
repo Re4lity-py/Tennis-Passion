@@ -5,11 +5,19 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #f7f7f7;
     color: #222;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 header {
@@ -17,6 +25,7 @@ header {
     color: #fff;
     padding: 30px 0 10px 0;
     text-align: center;
+    width: 100%;
 }
 
 header h1 {
@@ -43,17 +52,19 @@ nav a {
     transition: background 0.2s;
 }
 
-nav a:hover, nav a:focus {
+nav a:hover,
+nav a:focus {
     background: #146c38;
 }
 
 main {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 30px auto;
     background: #fff;
     padding: 30px 25px;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    width: 100%;
 }
 
 section {
@@ -73,7 +84,8 @@ h3 {
     margin-bottom: 6px;
 }
 
-ul, ol {
+ul,
+ol {
     margin-left: 20px;
     margin-bottom: 10px;
 }
@@ -84,7 +96,8 @@ table {
     margin-bottom: 18px;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #cce5d3;
     padding: 10px;
     text-align: center;
@@ -101,6 +114,7 @@ th {
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .classement-tables table {
     min-width: 220px;
 }
@@ -117,7 +131,7 @@ th {
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.10);
     transition: transform 0.2s;
 }
 
@@ -146,7 +160,8 @@ form {
     max-width: 400px;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 8px;
     border: 1px solid #b2d8c6;
     border-radius: 4px;
@@ -154,7 +169,10 @@ input, textarea {
     background: #f9f9f9;
 }
 
-button[type="submit"], #quiz-answers button, #quiz button, #citation button {
+button[type="submit"],
+#quiz-answers button,
+#quiz button,
+#citation button {
     background: #1a8f4c;
     color: #fff;
     border: none;
@@ -175,7 +193,10 @@ button[type="submit"], #quiz-answers button, #quiz button, #citation button {
     display: inline-block;
 }
 
-button[type="submit"]:hover, #quiz-answers button:hover, #quiz button:hover, #citation button:hover {
+button[type="submit"]:hover,
+#quiz-answers button:hover,
+#quiz button:hover,
+#citation button:hover {
     background: #146c38;
 }
 
@@ -192,7 +213,7 @@ button[type="submit"]:hover, #quiz-answers button:hover, #quiz button:hover, #ci
     height: 48px;
     font-size: 1.7em;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     z-index: 100;
     transition: background 0.2s;
 }
@@ -207,8 +228,8 @@ footer {
     background: #e6f9ee;
     color: #146c38;
     margin-top: 40px;
-    border-radius: 0 0 12px 12px;
     font-size: 1em;
+    width: 100%;
 }
 
 /* Mode sombre */
@@ -216,26 +237,37 @@ footer {
     background: #181818;
     color: #eee;
 }
+
 .dark-theme header,
 .dark-theme footer {
     background: #222;
     color: #fff;
 }
+
 .dark-theme main {
     background: #232323;
     color: #eee;
 }
-.dark-theme table, .dark-theme th, .dark-theme td {
+
+.dark-theme table,
+.dark-theme th,
+.dark-theme td {
     background: #232323;
     color: #eee;
     border-color: #444;
 }
-.dark-theme a { color: #8fd6ff; }
+
+.dark-theme a {
+    color: #8fd6ff;
+}
+
 .dark-theme details {
     background: #232323;
     border-left: 4px solid #8fd6ff;
 }
-.dark-theme input, .dark-theme textarea {
+
+.dark-theme input,
+.dark-theme textarea {
     background: #222;
     color: #eee;
     border-color: #444;
