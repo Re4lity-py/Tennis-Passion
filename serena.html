@@ -18,9 +18,27 @@
         .serena-galerie img { max-width: 190px; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
         .retour-haut { display: block; text-align: center; margin: 32px 0 0 0; }
         @media (max-width:700px) { .profil-serena { flex-direction: column; } }
+        /* Agrandissement d'image */
+        #zoom-overlay {
+          display: none;
+          position: fixed;
+          z-index: 9999;
+          left: 0; top: 0; width: 100vw; height: 100vh;
+          background: rgba(0,0,0,0.8);
+          justify-content: center;
+          align-items: center;
+        }
+        #zoom-overlay img {
+          max-width: 90vw;
+          max-height: 90vh;
+          box-shadow: 0 0 20px #fff;
+          border-radius: 10px;
+          background: #fff;
+        }
     </style>
 </head>
 <body>
+    <button id="theme-btn" class="sombre-toggle-btn" aria-label="Changer le mode d'affichage" style="position:fixed;top:12px;right:12px;z-index:1000;">🌙 Mode sombre</button>
     <header>
         <h1>Tennis Passion 🎾</h1>
         <nav>
@@ -46,10 +64,10 @@
     <main>
         <h2 id="top">Serena Williams - Reine du Court</h2>
         <section class="profil-serena">
-            <img src="https://www.womensports.fr/wp-content/uploads/2019/04/serena_williams_la_championne_de_tennis_investit_dans_des_entreprises_dirigees_par_des_femmes_depuis_2014_empowerment_leadership_feminin_femmes_business_entreprenariat-1.jpg" alt="Serena Williams 2020">
+            <img src="https://www.womensports.fr/wp-content/uploads/2019/04/serena_williams_la_championne_de_tennis_investit_dans_des_entreprises_dirigees_par_des_femmes_depuis_2014_empowerment_leadership.jpg" alt="Serena Williams portrait">
             <div>
                 <p>
-                    Serena Williams, née le 26 septembre 1981 à Saginaw (Michigan, États-Unis), est une légende vivante du tennis féminin. Avec sa puissance, son mental d'acier et son style de jeu unique, elle a dominé le circuit pendant deux décennies. Elle est considérée comme l'une des plus grandes joueuses de tous les temps.
+                    Serena Williams, née le 26 septembre 1981 à Saginaw (Michigan, États-Unis), est une légende vivante du tennis féminin. Avec sa puissance, son mental d'acier et son style de jeu unique, elle a marqué l'histoire du sport.
                 </p>
                 <ul>
                     <li><strong>Nationalité :</strong> Américaine 🇺🇸</li>
@@ -103,7 +121,7 @@
         <section>
             <h3>Personnalité, valeurs et engagements</h3>
             <p>
-                Serena est connue pour sa détermination, sa force mentale et son activisme en faveur de l’égalité. Elle a aussi fondé <a href="https://serenawilliams.com/pages/philanthropy" target="_blank">Serena Ventures</a>, pour soutenir des projets engagés et des entreprises dirigées par des femmes et minorités.
+                Serena est connue pour sa détermination, sa force mentale et son activisme en faveur de l’égalité. Elle a aussi fondé <a href="https://serenawilliams.com/pages/philanthropy" target="_blank">sa propre fondation</a>.
             </p>
             <p>
                 En dehors du court, elle s’investit dans la mode, les affaires et les œuvres humanitaires, tout en étant une mère très impliquée.
@@ -124,10 +142,10 @@
         <section>
             <h3>Galerie photos</h3>
             <div class="serena-galerie">
-                <img src="https://www.womensports.fr/wp-content/uploads/2019/04/serena_williams_la_championne_de_tennis_investit_dans_des_entreprises_dirigees_par_des_femmes_depuis_2014_empowerment_leadership_feminin_femmes_business_entreprenariat-1.jpg" alt="Serena Williams 2016">
-                <img src="https://ca-times.brightspotcdn.com/dims4/default/d7f6af2/2147483647/strip/true/crop/3645x2457+0+0/resize/1200x809!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F96%2Fad%2Fc4d35ea244b7aa6db7728a587c41%2Fus-open-serena-williams-quiz-tennis-37002.jpg" alt="Serena en 2020">
+                <img src="https://www.womensports.fr/wp-content/uploads/2019/04/serena_williams_la_championne_de_tennis_investit_dans_des_entreprises_dirigees_par_des_femmes_depuis_2014_empowerment_leadership.jpg" alt="Serena Williams business">
+                <img src="https://ca-times.brightspotcdn.com/dims4/default/d7f6af2/2147483647/strip/true/crop/3645x2457+0+0/resize/1200x809!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F7f%2F4d%2F1b6bc5b34e4397df9b6bfe6d7d9b%2Fla-sp-tennis-us-open-serena-williams-20180902-2.jpg" alt="Serena US Open">
                 <img src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.eurosport.com/2013/06/08/1024542-19073525-2560-1440.jpg" alt="Serena au US Open">
-                <img src="https://dims.apnews.com/dims4/default/84911ca/2147483647/strip/false/crop/3250x2193+0+0/resize/1486x1003!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F7e%2F6b%2F8f34dabb8dfb71a73a7a5f232880%2Fde51d7a2c0dd4623a80e1d0ca9b20539" alt="Style de Serena">
+                <img src="https://dims.apnews.com/dims4/default/84911ca/2147483647/strip/false/crop/3250x2193+0+0/resize/1486x1003!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F7e%2F6b%2F8f3b6f7e6d6e4a548b9e861c3f5e1a1e" alt="Serena victoire">
             </div>
         </section>
 
@@ -140,5 +158,36 @@
     <footer>
         &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.01
     </footer>
+
+    <!-- Overlay pour l'image agrandie -->
+    <div id="zoom-overlay" onclick="this.style.display='none'">
+      <img src="" alt="Aperçu" />
+    </div>
+
+    <script>
+        // Mode sombre/clair
+        const themeBtn = document.getElementById('theme-btn');
+        let dark = false;
+        if (sessionStorage.getItem('tennis-glossaire-dark') === '1') {
+            document.body.classList.add('dark-theme');
+            themeBtn.textContent = "☀️ Mode clair";
+            dark = true;
+        }
+        themeBtn.onclick = () => {
+            dark = !dark;
+            document.body.classList.toggle('dark-theme', dark);
+            themeBtn.textContent = dark ? "☀️ Mode clair" : "🌙 Mode sombre";
+            sessionStorage.setItem('tennis-glossaire-dark', dark ? '1' : '0');
+        };
+
+        // Agrandissement d'image (ajouté)
+        document.querySelectorAll('img').forEach(function(img) {
+          img.style.cursor = 'zoom-in';
+          img.onclick = function(e) {
+            document.querySelector('#zoom-overlay img').src = this.src;
+            document.getElementById('zoom-overlay').style.display = 'flex';
+          };
+        });
+    </script>
 </body>
 </html>
