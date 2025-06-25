@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Iga Swiatek - Tennis Passion</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main { margin-top: 40px; }
+        h2 { margin-top: 32px; }
+        .profil-swiatek { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+        .profil-swiatek img { max-width: 220px; border-radius: 10px; box-shadow: 0 2px 8px #0001; }
+        .swiatek-stats, .swiatek-table { margin: 2em 0; }
+        .swiatek-table table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+        .swiatek-table th, .swiatek-table td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+        .swiatek-table th { background: #f1e4f8; color: #7a1fa2; }
+        .swiatek-citation { font-style: italic; color: #7a1fa2; margin: 1.5em 0 1em 0; border-left: 4px solid #7a1fa2; padding-left: 1em; }
+        .swiatek-galerie { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 1.5em 0; }
+        .swiatek-galerie img { max-width: 190px; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+        .retour-haut { display: block; text-align: center; margin: 32px 0 0 0; }
+        @media (max-width:700px) { .profil-swiatek { flex-direction: column; } }
+
+        #zoom-overlay {
+          display: none;
+          position: fixed;
+          z-index: 9999;
+          left: 0; top: 0; width: 100vw; height: 100vh;
+          background: rgba(0,0,0,0.8);
+          justify-content: center;
+          align-items: center;
+        }
+        #zoom-overlay img {
+          max-width: 90vw;
+          max-height: 90vh;
+          box-shadow: 0 0 20px #fff;
+          border-radius: 10px;
+          background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="theme-btn" class="sombre-toggle-btn" aria-label="Changer le mode d'affichage" style="position:fixed;top:12px;right:12px;z-index:1000;">🌙 Mode sombre</button>
+
+    <header>
+        <h1>Tennis Passion 🎾</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#presentation">Présentation</a></li>
+                <li><a href="index.html#histoire">Histoire</a></li>
+                <li><a href="index.html#regles">Règles</a></li>
+                <li><a href="index.html#tournois">Tournois majeurs</a></li>
+                <li><a href="index.html#news">Actualités</a></li>
+                <li><a href="index.html#classement">Classement</a></li>
+                <li><a href="index.html#players">Joueurs célèbres</a></li>
+                <li><a href="index.html#gallery">Galerie</a></li>
+                <li><a href="index.html#citation">Citation</a></li>
+                <li><a href="index.html#quiz">Quiz</a></li>
+                <li><a href="glossaire.html">Glossaire</a></li>
+                <li><a href="index.html#utils">Outils</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="top">Iga Swiatek - Reine de la Terre Battue</h2>
+
+        <section class="profil-swiatek">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Iga_%C5%9Awi%C4%85tek_2023.jpg/440px-Iga_%C5%9Awi%C4%85tek_2023.jpg" alt="Iga Swiatek 2023">
+            <div>
+                <p>
+                    Iga Swiatek, née le 31 mai 2001 à Varsovie (Pologne), est la figure montante du tennis féminin. Dotée d’un jeu puissant et intelligent, elle a conquis le monde du tennis avec grâce et intensité.
+                </p>
+                <ul>
+                    <li><strong>Nationalité :</strong> Polonaise 🇵🇱</li>
+                    <li><strong>Naissance :</strong> 31 mai 2001, Varsovie</li>
+                    <li><strong>Taille :</strong> 1,76 m</li>
+                    <li><strong>Jeu :</strong> Droitière, revers à deux mains</li>
+                    <li><strong>Surnom :</strong> "Iga", "The Queen of Clay"</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="swiatek-citation">
+            « Le calme vient de l’intérieur. Vous devez le cultiver. »
+            <br><span style="font-size:0.9em;color:#777;">&mdash; Iga Swiatek</span>
+        </section>
+
+        <section class="swiatek-stats">
+            <h3>Statistiques Clés</h3>
+            <ul>
+                <li><strong>Titres WTA :</strong> 22</li>
+                <li><strong>Titres du Grand Chelem :</strong> 4</li>
+                <li><strong>Roland-Garros :</strong> 4 (record personnel)</li>
+                <li><strong>Semaines n°1 mondiale :</strong> +100</li>
+                <li><strong>Pourcentage de victoires en carrière :</strong> 80 %</li>
+                <li><strong>Meilleure saison :</strong> 2022 (37 victoires consécutives)</li>
+            </ul>
+        </section>
+
+        <section class="swiatek-table">
+            <h3>Palmarès en Grand Chelem</h3>
+            <table>
+                <tr><th>Tournoi</th><th>Victoires</th><th>Années</th></tr>
+                <tr><td>Australian Open</td><td>0</td><td>-</td></tr>
+                <tr><td>Roland-Garros</td><td>4</td><td>2020, 2022, 2023, 2024</td></tr>
+                <tr><td>Wimbledon</td><td>0</td><td>-</td></tr>
+                <tr><td>US Open</td><td>1</td><td>2022</td></tr>
+            </table>
+        </section>
+
+        <section>
+            <h3>Moments marquants et records</h3>
+            <ul>
+                <li>Première Polonaise à remporter un Grand Chelem.</li>
+                <li>Plus longue série de victoires en une saison depuis 2013.</li>
+                <li>N°1 mondiale à seulement 20 ans après la retraite de Barty.</li>
+                <li>Spécialiste de la terre battue, elle domine à Roland-Garros.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Personnalité, valeurs et passions</h3>
+            <p>
+                Connue pour sa rigueur mentale, Iga travaille avec une psychologue du sport depuis le début de sa carrière. Passionnée de musique classique et de lecture, elle est aussi engagée dans des causes sociales.
+            </p>
+            <p>
+                Elle milite pour la santé mentale chez les jeunes et pour l'accès à l'éducation en Pologne.
+            </p>
+        </section>
+
+        <section>
+            <h3>Quelques anecdotes</h3>
+            <ul>
+                <li>Elle écoute souvent Radiohead ou Coldplay avant ses matchs.</li>
+                <li>Son père était rameur olympique.</li>
+                <li>Elle a remporté Roland-Garros 2020 sans perdre un set.</li>
+                <li>Elle a un rituel de visualisation avant chaque match.</li>
+                <li>Elle a lu toute la saga *Harry Potter* plusieurs fois.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Galerie photos</h3>
+            <div class="swiatek-galerie">
+                <img src="https://cdn.theathletic.com/app/uploads/2023/06/10135602/Swiatek-RG2023.jpg" alt="Swiatek Roland Garros 2023">
+                <img src="https://media.cnn.com/api/v1/images/stellar/prod/230610181355-iga-swiatek-french-open-2023.jpg" alt="Swiatek Trophée RG">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Iga_%C5%9Awi%C4%85tek_%2830%29_%28cropped%29.jpg/800px-Iga_%C5%9Awi%C4%85tek_%2830%29_%28cropped%29.jpg" alt="Iga Swiatek Portrait">
+                <img src="https://images.letemps.ch/sites/default/files/styles/share/public/media/2022/09/11/file7lc7g01lgq01dsd1.jpeg" alt="US Open 2022">
+            </div>
+        </section>
+
+        <div class="retour-haut">
+            <button onclick="window.location.href='index.html';">⬅️ Retour à la page principale</button>
+            <button onclick="window.scrollTo({top:0,behavior:'smooth'})" style="margin-left: 14px;">⬆️ Haut de page</button>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Re4lity.Dev &nbsp;|&nbsp; Version 1.01
+    </footer>
+
+    <div id="zoom-overlay" onclick="this.style.display='none'">
+      <img src="" alt="Aperçu" />
+    </div>
+
+    <script>
+        const themeBtn = document.getElementById('theme-btn');
+        let dark = false;
+        if (sessionStorage.getItem('tennis-glossaire-dark') === '1') {
+            document.body.classList.add('dark-theme');
+            themeBtn.textContent = "☀️ Mode clair";
+            dark = true;
+        }
+        themeBtn.onclick = () => {
+            dark = !dark;
+            document.body.classList.toggle('dark-theme', dark);
+            themeBtn.textContent = dark ? "☀️ Mode clair" : "🌙 Mode sombre";
+            sessionStorage.setItem('tennis-glossaire-dark', dark ? '1' : '0');
+        };
+
+        document.querySelectorAll('img').forEach(function(img) {
+          img.style.cursor = 'zoom-in';
+          img.onclick = function() {
+            document.querySelector('#zoom-overlay img').src = this.src;
+            document.getElementById('zoom-overlay').style.display = 'flex';
+          };
+        });
+    </script>
+</body>
+</html>
 
