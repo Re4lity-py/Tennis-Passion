@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="theme-btn" class="sombre-toggle-btn" aria-label="Changer le mode d'affichage">🌙 Mode sombre</button>
+    <!-- Bouton mode sombre en haut à droite -->
+    <button id="theme-btn" class="theme-toggle-btn" aria-label="Changer le mode d'affichage">
+        <span class="theme-icon">🌙</span>
+        <span class="theme-label">Mode sombre</span>
+    </button>
     <header>
         <h1>Tennis Passion 🎾</h1>
         <nav>
@@ -84,26 +88,10 @@
         <section id="joueurs-joueuses">
             <h2>Fiches de joueurs / joueuses à découvrir</h2>
             <ul>
-                <li>
-                    <a href="Rafeal_nadal.html">
-                        Rafael Nadal
-                    </a>
-                </li>
-                <li>
-                    <a href="novak.html" target="_blank" rel="noopener">
-                        Novak Djokovic
-                    </a>
-                </li>
-                <li>
-                    <a href="serena.html" target="_blank" rel="noopener">
-                        Serena Williams
-                    </a>
-                </li>
-                <li>
-                    <a href="swiatek.html" target="_blank" rel="noopener">
-                        Iga Świątek
-                    </a>
-                </li>
+                <li><a href="Rafeal_nadal.html">Rafael Nadal</a></li>
+                <li><a href="novak.html" target="_blank" rel="noopener">Novak Djokovic</a></li>
+                <li><a href="serena.html" target="_blank" rel="noopener">Serena Williams</a></li>
+                <li><a href="swiatek.html" target="_blank" rel="noopener">Iga Świątek</a></li>
             </ul>
         </section>
         <section id="classement">
@@ -165,30 +153,22 @@
         </section>
         <section id="gallery">
             <h2>Galerie</h2>
-            <div style="display:flex;gap:15px;flex-wrap:wrap;">
-                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:8px;">
-                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle" style="width:220px;height:140px;object-fit:cover;border-radius:8px;">
-                <img src="https://st4.depositphotos.com/1587911/24763/i/450/depositphotos_247635014-stock-photo-melbourne-australia-january-2019-rod.jpg" alt="Open d'Australie" style="width:220px;height:140px;object-fit:cover;border-radius:8px;">
-                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match" style="width:220px;height:140px;object-fit:cover;border-radius:8px;">
-                <img src="https://img.20mn.fr/6ZQZiAlfTuqZDIh6b8EAVik/1444x920_paris-le-31-mai-2012-illustration-cours-de-tennis-durant-les-internationaux-de-france-de-roland-garros-foule-public.jpg" alt="Roland Garros foule" style="width:220px;height:140px;object-fit:cover;border-radius:8px;">
-                <img src="https://www.mon-terrain-2-sports.fr/wp-content/uploads/2024/09/pexels-pixelcop-1619860-1.jpg" alt="Terrain de tennis" style="width:220px;height:140px;object-fit:cover;border-radius:8px;">
+            <div class="gallery">
+                <img src="https://i.f1g.fr/media/figaro/1200x630_crop/2019/06/04/XVMe5ca163c-847e-11e9-bc1d-9b7a6df1c27b.jpg" alt="Court de tennis">
+                <img src="https://static.fnac-static.com/multimedia/Images/FD/Comete/69605/CCP_IMG_ORIGINAL/857437.jpg" alt="Raquette et balle">
+                <img src="https://st4.depositphotos.com/1587911/24763/i/450/depositphotos_247635014-stock-photo-melbourne-australia-january-2019-rod.jpg" alt="Open d'Australie">
+                <img src="https://img.lemde.fr/2022/04/20/0/0/5909/4000/664/0/75/0/d335d25_1650466569599-000-9e242n.jpg" alt="Public lors d'un match">
+                <img src="https://img.20mn.fr/6ZQZiAlfTuqZDIh6b8EAVik/1444x920_paris-le-31-mai-2012-illustration-cours-de-tennis-durant-les-internationaux-de-france-de-roland-garros-foule-public.jpg" alt="Roland Garros foule">
+                <img src="https://www.mon-terrain-2-sports.fr/wp-content/uploads/2024/09/pexels-pixelcop-1619860-1.jpg" alt="Terrain de tennis">
             </div>
         </section>
         <section id="utils">
             <h2>Outils utiles pour les joueurs</h2>
             <ul>
-                <li>
-                    <a href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener">Scores en direct ATP</a>
-                </li>
-                <li>
-                    <a href="https://www.wtatennis.com/scores" target="_blank" rel="noopener">Scores en direct WTA</a>
-                </li>
-                <li>
-                    <a href="https://www.tennisexplorer.com/" target="_blank" rel="noopener">Statistiques et résultats Tennis Explorer</a>
-                </li>
-                <li>
-                    <a href="https://www.tenniswarehouse-europe.com/" target="_blank" rel="noopener">Acheter du matériel de tennis</a>
-                </li>
+                <li><a href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener">Scores en direct ATP</a></li>
+                <li><a href="https://www.wtatennis.com/scores" target="_blank" rel="noopener">Scores en direct WTA</a></li>
+                <li><a href="https://www.tennisexplorer.com/" target="_blank" rel="noopener">Statistiques et résultats Tennis Explorer</a></li>
+                <li><a href="https://www.tenniswarehouse-europe.com/" target="_blank" rel="noopener">Acheter du matériel de tennis</a></li>
             </ul>
         </section>
         <section id="contact">
@@ -263,18 +243,22 @@
     </div>
 
     <script>
-        // Mode sombre/clair
+        // Mode sombre/clair moderne
         const themeBtn = document.getElementById('theme-btn');
+        const icon = themeBtn.querySelector('.theme-icon');
+        const label = themeBtn.querySelector('.theme-label');
         let dark = false;
         if (sessionStorage.getItem('tennis-theme-dark') === '1') {
             document.body.classList.add('dark-theme');
-            themeBtn.textContent = "☀️ Mode clair";
+            icon.textContent = "☀️";
+            label.textContent = "Mode clair";
             dark = true;
         }
         themeBtn.onclick = () => {
             dark = !dark;
             document.body.classList.toggle('dark-theme', dark);
-            themeBtn.textContent = dark ? "☀️ Mode clair" : "🌙 Mode sombre";
+            icon.textContent = dark ? "☀️" : "🌙";
+            label.textContent = dark ? "Mode clair" : "Mode sombre";
             sessionStorage.setItem('tennis-theme-dark', dark ? '1' : '0');
         };
 
@@ -289,7 +273,7 @@
             });
         });
 
-        // 20 citations
+        // Citations
         const quotes = [
             "Le tennis, c’est 90% mental et 10% physique. – Jimmy Connors",
             "Le succès, c’est tomber sept fois, se relever huit. – Serena Williams",
@@ -317,7 +301,7 @@
         }
         randomQuote();
 
-        // Quiz Tennis (affichage résultat à la fin)
+        // Quiz Tennis
         const quiz = [
             {
                 q: "Combien de sets faut-il gagner pour remporter un match du Grand Chelem masculin ?",
@@ -440,7 +424,7 @@
         });
 
         // Agrandissement d'image (ajouté)
-        document.querySelectorAll('img').forEach(function(img) {
+        document.querySelectorAll('.gallery img').forEach(function(img) {
             img.style.cursor = 'zoom-in';
             img.onclick = function(e) {
                 document.querySelector('#zoom-overlay img').src = this.src;
